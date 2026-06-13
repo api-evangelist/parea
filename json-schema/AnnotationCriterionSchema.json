@@ -1,0 +1,86 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/parea/main/json-schema/AnnotationCriterionSchema.json",
+  "title": "AnnotationCriterionSchema",
+  "description": "Schema for AnnotationCriterionSchema",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "Annotation name"
+    },
+    "type": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/DefinedAnnotationType"
+        }
+      ],
+      "description": "Annotation type"
+    },
+    "min_value": {
+      "title": "Min Value",
+      "description": "Minimum value",
+      "type": "number",
+      "nullable": true
+    },
+    "max_value": {
+      "title": "Max Value",
+      "description": "Maximum value",
+      "type": "number",
+      "nullable": true
+    },
+    "value_score_map": {
+      "title": "Value Score Map",
+      "description": "Value to score mapping",
+      "additionalProperties": {
+        "type": "number"
+      },
+      "type": "object",
+      "nullable": true
+    },
+    "id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "integer"
+        }
+      ],
+      "title": "Id",
+      "description": "Annotation ID"
+    },
+    "organization_id": {
+      "type": "string",
+      "title": "Organization Id",
+      "description": "Organization ID"
+    },
+    "description": {
+      "title": "Description",
+      "description": "Annotation description",
+      "type": "string",
+      "nullable": true
+    },
+    "cur_bootstrapped_eval_id": {
+      "title": "Cur Bootstrapped Eval Id",
+      "description": "Current bootstrapped evaluation ID",
+      "type": "integer",
+      "nullable": true
+    },
+    "bootstrapped_evals": {
+      "additionalProperties": {
+        "$ref": "#/components/schemas/BootstrapEvalSchema"
+      },
+      "type": "object",
+      "title": "Bootstrapped Evals",
+      "description": "Bootstrapped evaluations"
+    }
+  },
+  "type": "object",
+  "required": [
+    "name",
+    "type",
+    "id",
+    "organization_id"
+  ]
+}

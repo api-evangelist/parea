@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/parea/main/json-schema/AnalyticsRequestSchema.json",
+  "title": "AnalyticsRequestSchema",
+  "description": "Schema for AnalyticsRequestSchema",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name"
+    },
+    "data": {
+      "title": "Data",
+      "type": "object",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "required": [
+    "name"
+  ]
+}

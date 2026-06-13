@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/parea/main/json-schema/AddTraceLogsToAnnotationQueuesSchema.json",
+  "title": "AddTraceLogsToAnnotationQueuesSchema",
+  "description": "Schema for AddTraceLogsToAnnotationQueuesSchema",
+  "properties": {
+    "trace_ids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Trace Ids"
+    },
+    "annotation_queue_uuids": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Annotation Queue Uuids"
+    }
+  },
+  "type": "object",
+  "required": [
+    "trace_ids",
+    "annotation_queue_uuids"
+  ]
+}

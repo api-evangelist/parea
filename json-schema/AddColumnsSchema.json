@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/parea/main/json-schema/AddColumnsSchema.json",
+  "title": "AddColumnsSchema",
+  "description": "Schema for AddColumnsSchema",
+  "properties": {
+    "columns": {
+      "items": {
+        "$ref": "#/components/schemas/NewColumn"
+      },
+      "type": "array",
+      "title": "Columns"
+    },
+    "backfill": {
+      "type": "boolean",
+      "title": "Backfill",
+      "default": true
+    }
+  },
+  "type": "object",
+  "required": [
+    "columns"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/parea/main/json-schema/AnnotationQueueItemSchema.json",
+  "title": "AnnotationQueueItemSchema",
+  "description": "Schema for AnnotationQueueItemSchema",
+  "properties": {
+    "annotation_queue_item_uuid": {
+      "type": "string",
+      "title": "Annotation Queue Item Uuid"
+    },
+    "trace_id": {
+      "type": "string",
+      "title": "Trace Id"
+    }
+  },
+  "type": "object",
+  "required": [
+    "annotation_queue_item_uuid",
+    "trace_id"
+  ]
+}

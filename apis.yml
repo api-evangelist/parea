@@ -50,6 +50,9 @@ apis:
         url: https://docs.parea.ai
       - type: OpenAPI
         url: https://docs.parea.ai/api-reference/overview
+      - type: OpenAPI
+        url: >-
+          https://raw.githubusercontent.com/api-evangelist/parea/refs/heads/main/openapi/parea-rest-api-openapi.yml
 common:
   - type: Website
     url: https://www.parea.ai/
@@ -71,6 +74,10 @@ common:
     url: rate-limits/parea-rate-limits.yml
   - type: FinOps
     url: finops/parea-finops.yml
+  - type: Vocabulary
+    url: vocabulary/parea-vocabulary.yml
+  - type: JSONLDContext
+    url: json-ld/parea-context.jsonld
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com

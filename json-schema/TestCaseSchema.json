@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/parea/main/json-schema/TestCaseSchema.json",
+  "title": "TestCaseSchema",
+  "description": "Schema for TestCaseSchema",
+  "properties": {
+    "inputs": {
+      "additionalProperties": {
+        "type": "string"
+      },
+      "type": "object",
+      "title": "Inputs",
+      "description": "Dictionary mapping input names to values. Input names correspond to the column names of the test case collection."
+    },
+    "target": {
+      "title": "Target",
+      "description": "Optional target/ground truth value for the test case/inputs",
+      "type": "string",
+      "nullable": true
+    },
+    "tags": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "title": "Tags",
+      "description": "List of tags associated with the test case",
+      "default": []
+    }
+  },
+  "type": "object",
+  "required": [
+    "inputs"
+  ],
+  "examples": [
+    {
+      "inputs": {
+        "framework": "fastapi",
+        "language": "python"
+      },
+      "tags": [
+        "easy"
+      ],
+      "target": "a good program here"
+    }
+  ]
+}

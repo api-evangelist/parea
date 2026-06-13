@@ -1,0 +1,48 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "parea": "https://www.parea.ai/vocab#",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+
+    "TraceLog": "parea:TraceLog",
+    "Experiment": "parea:Experiment",
+    "Dataset": "parea:Dataset",
+    "TestCase": "parea:TestCase",
+    "Feedback": "parea:Feedback",
+    "Project": "parea:Project",
+    "Completion": "parea:Completion",
+    "AnnotationQueue": "parea:AnnotationQueue",
+
+    "traceId": {"@id": "parea:traceId", "@type": "xsd:string"},
+    "parentTraceId": {"@id": "parea:parentTraceId", "@type": "xsd:string"},
+    "rootTraceId": {"@id": "parea:rootTraceId", "@type": "xsd:string"},
+    "experimentUuid": {"@id": "parea:experimentUuid", "@type": "xsd:string"},
+    "projectName": {"@id": "parea:projectName", "@type": "xsd:string"},
+    "projectUuid": {"@id": "parea:projectUuid", "@type": "xsd:string"},
+
+    "model": {"@id": "parea:model", "@type": "xsd:string"},
+    "provider": {"@id": "parea:provider", "@type": "xsd:string"},
+    "inputTokens": {"@id": "parea:inputTokens", "@type": "xsd:integer"},
+    "outputTokens": {"@id": "parea:outputTokens", "@type": "xsd:integer"},
+    "totalTokens": {"@id": "parea:totalTokens", "@type": "xsd:integer"},
+    "cost": {"@id": "parea:cost", "@type": "xsd:decimal"},
+    "latency": {"@id": "parea:latency", "@type": "xsd:decimal"},
+
+    "score": {"@id": "parea:score", "@type": "xsd:decimal"},
+    "feedback": {"@id": "parea:feedback", "@type": "parea:Feedback"},
+    "target": {"@id": "parea:target", "@type": "xsd:string"},
+    "output": {"@id": "parea:output", "@type": "xsd:string"},
+
+    "datasetCollectionIdentifier": {"@id": "parea:datasetCollectionIdentifier", "@type": "xsd:string"},
+    "testCaseId": {"@id": "parea:testCaseId", "@type": "xsd:integer"},
+
+    "startTimestamp": {"@id": "parea:startTimestamp", "@type": "xsd:dateTime"},
+    "endTimestamp": {"@id": "parea:endTimestamp", "@type": "xsd:dateTime"},
+
+    "name": {"@id": "schema:name"},
+    "description": {"@id": "schema:description"},
+    "url": {"@id": "schema:url"},
+    "identifier": {"@id": "schema:identifier"}
+  }
+}

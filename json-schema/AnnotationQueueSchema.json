@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/parea/main/json-schema/AnnotationQueueSchema.json",
+  "title": "AnnotationQueueSchema",
+  "description": "Schema for AnnotationQueueSchema",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Name",
+      "description": "Annotation name"
+    },
+    "uuid": {
+      "type": "string",
+      "title": "Uuid",
+      "description": "Annotation ID"
+    },
+    "created_at": {
+      "type": "string",
+      "title": "Created At",
+      "description": "Annotation creation time"
+    },
+    "updated_at": {
+      "type": "string",
+      "title": "Updated At",
+      "description": "Annotation last update time"
+    },
+    "organization_id": {
+      "type": "string",
+      "title": "Organization Id",
+      "description": "Organization ID"
+    }
+  },
+  "type": "object",
+  "required": [
+    "name",
+    "uuid",
+    "created_at",
+    "updated_at",
+    "organization_id"
+  ]
+}

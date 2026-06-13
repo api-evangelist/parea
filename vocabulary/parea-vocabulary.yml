@@ -1,0 +1,61 @@
+vocabulary:
+  - term: trace
+    definition: >-
+      A recorded execution of an LLM call or chain of calls, capturing inputs,
+      outputs, latency, token usage, cost, and metadata for observability.
+  - term: trace_log
+    definition: >-
+      The stored artifact representing a single trace, including model
+      configuration, messages, scores, and evaluation results.
+  - term: experiment
+    definition: >-
+      A structured run of a test suite against a dataset using specific prompt
+      versions or model configurations, producing aggregate statistics.
+  - term: dataset
+    definition: >-
+      A named collection of test cases used to evaluate LLM application
+      performance across different prompt or model versions.
+  - term: test_case
+    definition: >-
+      A single input/output pair or scenario within a dataset, used to
+      benchmark and evaluate LLM responses.
+  - term: completion
+    definition: >-
+      A request to the Parea LLM proxy gateway to generate a model response,
+      with built-in caching, retries, and observability.
+  - term: feedback
+    definition: >-
+      Human or automated evaluation attached to a trace, recording scores and
+      labels that measure output quality.
+  - term: project
+    definition: >-
+      A top-level organizational unit in Parea grouping related traces,
+      experiments, and datasets.
+  - term: prompt_version
+    definition: >-
+      A specific version of a prompt template stored in Parea, enabling
+      reproducible experiments and A/B testing.
+  - term: annotation_queue
+    definition: >-
+      A queue of trace logs assigned for human review and labeling to collect
+      ground-truth feedback data.
+  - term: evaluation
+    definition: >-
+      The process of assessing LLM output quality using automated metrics,
+      human feedback, or LLM-as-judge techniques.
+  - term: score
+    definition: >-
+      A numeric or categorical measurement of LLM output quality on a
+      particular evaluation dimension, attached to a trace or experiment row.
+  - term: x_api_key
+    definition: >-
+      The API authentication header used to authenticate requests to the Parea
+      REST API, generated from the Parea settings page.
+  - term: llm_proxy
+    definition: >-
+      The Parea gateway that unifies access to multiple LLM providers with
+      built-in caching, retries, and automatic trace logging.
+  - term: latency
+    definition: >-
+      The elapsed time in seconds between sending an LLM request and receiving
+      the full response, tracked per trace.

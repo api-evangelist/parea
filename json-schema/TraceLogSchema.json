@@ -1,0 +1,363 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/parea/main/json-schema/TraceLogSchema.json",
+  "title": "TraceLogSchema",
+  "description": "Schema for TraceLogSchema",
+  "properties": {
+    "configuration": {
+      "allOf": [
+        {
+          "$ref": "#/components/schemas/InputsSchema-Input"
+        }
+      ],
+      "description": "If this log was a LLM call, this will contain the configuration used for the call.",
+      "default": {}
+    },
+    "inputs": {
+      "title": "Inputs",
+      "description": "Key-value pair inputs of this trace. Note, there is a special field to capture messages in LLM calls. You can still use it in the case of LLM calls to track the key-value pairs for prompt templates.",
+      "type": "object",
+      "nullable": true
+    },
+    "output": {
+      "title": "Output",
+      "description": "Response of this step/log/function. If response isn\u00e2\u20ac\u2122t a string, it needs to be serialized to a string.",
+      "type": "string",
+      "nullable": true
+    },
+    "target": {
+      "title": "Target",
+      "description": "The target or \u00e2\u20ac\u0153gold standard\u00e2\u20ac\u009d response for the inputs of this log.",
+      "type": "string",
+      "nullable": true
+    },
+    "latency": {
+      "title": "Latency",
+      "description": "Latency of this log in seconds.",
+      "default": 0.0,
+      "type": "number",
+      "nullable": true
+    },
+    "time_to_first_token": {
+      "title": "Time To First Token",
+      "description": "If this was a LLM call, this will contain the time taken to generate the first token.",
+      "type": "number",
+      "nullable": true
+    },
+    "input_tokens": {
+      "title": "Input Tokens",
+      "description": "If this was a LLM call, this will contain the number of tokens in the input.",
+      "default": 0,
+      "type": "integer",
+      "nullable": true
+    },
+    "output_tokens": {
+      "title": "Output Tokens",
+      "description": "If this was a LLM call, this will contain the number of tokens in the output.",
+      "default": 0,
+      "type": "integer",
+      "nullable": true
+    },
+    "total_tokens": {
+      "title": "Total Tokens",
+      "description": "If this was a LLM call, this will contain the total number of tokens in the input and output.",
+      "default": 0,
+      "type": "integer",
+      "nullable": true
+    },
+    "cost": {
+      "title": "Cost",
+      "description": "If this was a LLM call, this will contain the cost of the call.",
+      "default": 0.0,
+      "type": "number",
+      "nullable": true
+    },
+    "trace_id": {
+      "type": "string",
+      "title": "Trace Id",
+      "description": "UUID of the trace log. Ex: e3267953-a16f-47f5-b37e-622dbb29d730"
+    },
+    "start_timestamp": {
+      "type": "string",
+      "title": "Start Timestamp",
+      "description": "Start timestamp"
+    },
+    "parent_trace_id": {
+      "title": "Parent Trace Id",
+      "description": "If given, current trace will be a child of this trace. If current child is not a child, `parent_trace_id` should be equal to `trace_id`",
+      "type": "string",
+      "nullable": true
+    },
+    "root_trace_id": {
+      "title": "Root Trace Id",
+      "description": "This is the UUID of the root trace/span of this trace. If current trace is the root trace, `root_trace_id` must be equal to `trace_id`",
+      "type": "string",
+      "nullable": true
+    },
+    "project_name": {
+      "title": "Project Name",
+      "description": "Name of the project with which the trace/log should be associated with. Must be provided if `project_uuid` is not provided",
+      "type": "string",
+      "nullable": true
+    },
+    "status": {
+      "title": "Status",
+      "description": "If the trace was a `success` or `error`",
+      "type": "string",
+      "nullable": true
+    },
+    "error": {
+      "title": "Error",
+      "description": "If `status=error`, this should contain any additional information such as the stacktrace",
+      "type": "string",
+      "nullable": true
+    },
+    "output_for_eval_metrics": {
+      "title": "Output For Eval Metrics",
+      "description": "If provided, will be used as output for any specified evaluation metric.",
+      "type": "string",
+      "nullable": true
+    },
+    "evaluation_metric_names": {
+      "title": "Evaluation Metric Names",
+      "description": "Names of evaluation metrics deployed on Parea which should be applied to this log.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "scores": {
+      "title": "Scores",
+      "description": "Any scores/eval results associated with this log.",
+      "items": {
+        "$ref": "#/components/schemas/EvaluationScoreSchema"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "feedback_score": {
+      "title": "Feedback Score",
+      "description": "Any captured (user) feedback on this log",
+      "type": "number",
+      "nullable": true
+    },
+    "apply_eval_frac": {
+      "title": "Apply Eval Frac",
+      "description": "If specified, evals given with `evaluation_metric_names` will be applied to this log with this fraction.",
+      "default": 1.0,
+      "type": "number",
+      "nullable": true
+    },
+    "log_sample_rate": {
+      "title": "Log Sample Rate",
+      "description": "If specified, this log and its entire associated trace will logged with this probability. Must be between 0 and 1 (incl.). Defaults to 1.0 (i.e., keeping all logs)",
+      "default": 1.0,
+      "type": "number",
+      "maximum": 1.0,
+      "minimum": 0.0,
+      "nullable": true
+    },
+    "deployment_id": {
+      "title": "Deployment Id",
+      "description": "Optionally, provide the ID of the used deployed prompt in this log.",
+      "type": "string",
+      "nullable": true
+    },
+    "cache_hit": {
+      "type": "boolean",
+      "title": "Cache Hit",
+      "description": "If the cache was hit for this log.",
+      "default": false
+    },
+    "trace_name": {
+      "title": "Trace Name",
+      "description": "The name of this span.",
+      "type": "string",
+      "nullable": true
+    },
+    "children": {
+      "title": "Children",
+      "description": "UUIDs of any children.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "children_ids": {
+      "title": "Children Ids",
+      "description": "IDs of any children. Will be automatically populated.",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "end_timestamp": {
+      "title": "End Timestamp",
+      "description": "End timestamp of span.",
+      "type": "string",
+      "nullable": true
+    },
+    "end_user_identifier": {
+      "title": "End User Identifier",
+      "description": "Unique identifier for a end-user.",
+      "type": "string",
+      "nullable": true
+    },
+    "session_id": {
+      "title": "Session Id",
+      "description": "Unique identifier for a session. Can you be used to associated multiple logs in e.g. chat applications.",
+      "type": "string",
+      "nullable": true
+    },
+    "metadata": {
+      "title": "Metadata",
+      "description": "Any additional key-value pairs which provide context or are useful for filtering.",
+      "type": "object",
+      "nullable": true
+    },
+    "tags": {
+      "title": "Tags",
+      "description": "List of tags which provide additional context or are useful for filtering.",
+      "items": {
+        "type": "string"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "experiment_uuid": {
+      "title": "Experiment Uuid",
+      "description": "If given, will be used to associate this log with an experiment.",
+      "type": "string",
+      "nullable": true
+    },
+    "images": {
+      "title": "Images",
+      "description": "Any images associated with trace.",
+      "items": {
+        "$ref": "#/components/schemas/TraceLogImage"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "comments": {
+      "title": "Comments",
+      "description": "Any comments on log which were collected on Parea frontend.",
+      "items": {
+        "$ref": "#/components/schemas/TraceLogCommentSchema"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "annotations": {
+      "title": "Annotations",
+      "description": "Any annotations on log which were collected on Parea frontend. It maps annoation criterion ID to a dictionary mapping user_id (Parea user ID) to annotation.",
+      "additionalProperties": {
+        "additionalProperties": {
+          "$ref": "#/components/schemas/TraceLogAnnotationSchema"
+        },
+        "type": "object"
+      },
+      "type": "object",
+      "nullable": true
+    },
+    "depth": {
+      "type": "integer",
+      "title": "Depth",
+      "description": "Depth/level of nestedness of span in overall trace. Root-level trace is 0 and it always increments by 1.",
+      "default": 0
+    },
+    "execution_order": {
+      "type": "integer",
+      "title": "Execution Order",
+      "description": "The execution number of span in trace. It starts with 0 and increments by 1 with every span.",
+      "default": 0
+    },
+    "evaluation_metric_ids": {
+      "title": "Evaluation Metric Ids",
+      "description": "Deprecated",
+      "items": {
+        "type": "integer"
+      },
+      "type": "array",
+      "nullable": true
+    },
+    "fill_children": {
+      "type": "boolean",
+      "title": "Fill Children",
+      "description": "Deprecated",
+      "default": false
+    },
+    "project_uuid": {
+      "title": "Project Uuid",
+      "description": "UUID of project with which this log is associated. Will be automatically filled-in by SDKs",
+      "type": "string",
+      "nullable": true
+    },
+    "organization_id": {
+      "title": "Organization Id",
+      "description": "Organization ID associated with Parea API key. Will be automatically determined from API key",
+      "type": "string",
+      "nullable": true
+    }
+  },
+  "type": "object",
+  "required": [
+    "trace_id",
+    "start_timestamp"
+  ],
+  "examples": [
+    {
+      "depth": 0,
+      "end_timestamp": "2024-05-30 13:48:35",
+      "execution_order": 0,
+      "inputs": {
+        "x": "Golang",
+        "y": "Fiber"
+      },
+      "metadata": {
+        "purpose": "testing"
+      },
+      "output": "Some logged output",
+      "parent_trace_id": "<<SAME_UUID>>",
+      "project_name": "default",
+      "root_trace_id": "<<SAME_UUID>>",
+      "start_timestamp": "2024-05-30 13:48:34",
+      "status": "success",
+      "trace_id": "<<UUID>>",
+      "trace_name": "test"
+    },
+    {
+      "configuration": {
+        "messages": [
+          {
+            "content": "Some prompt",
+            "role": "user"
+          }
+        ],
+        "model": "gpt-4o",
+        "provider": "openai"
+      },
+      "depth": 0,
+      "end_timestamp": "2024-05-30 13:48:35",
+      "execution_order": 0,
+      "inputs": {
+        "promptTemplateVar1": "value",
+        "promptTemplateVar2": "some other value"
+      },
+      "metadata": {
+        "purpose": "testing"
+      },
+      "output": "LLM response",
+      "parent_trace_id": "<<SAME_UUID>>",
+      "project_name": "default",
+      "root_trace_id": "<<SAME_UUID>>",
+      "start_timestamp": "2024-05-30 13:48:34",
+      "status": "success",
+      "trace_id": "<<UUID>>",
+      "trace_name": "LLM"
+    }
+  ]
+}
