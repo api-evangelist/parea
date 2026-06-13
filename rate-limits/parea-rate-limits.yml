@@ -1,0 +1,57 @@
+name: Parea AI Rate Limits
+description: >-
+  Rate limiting policies for the Parea AI REST API. Parea AI does not
+  currently publish explicit rate limit values in public documentation.
+  The limits below reflect known plan-based log quotas and general API
+  usage guidance. Contact support for enterprise-tier limit details.
+specificationVersion: '0.1'
+url: https://docs.parea.ai/tutorials/api-only/cookbook
+rateLimits:
+  - name: Free Plan Log Quota
+    description: Maximum number of trace logs recorded per month on the Free plan.
+    scope: account
+    limit: 3000
+    period: month
+    unit: logs
+    plan: Free
+  - name: Team Plan Log Quota
+    description: Maximum number of trace logs recorded per month on the Team plan.
+    scope: account
+    limit: 100000
+    period: month
+    unit: logs
+    plan: Team
+  - name: Enterprise Plan Log Quota
+    description: Custom log volume limits negotiated per organization on the Enterprise plan.
+    scope: account
+    limit: custom
+    period: month
+    unit: logs
+    plan: Enterprise
+  - name: Deployed Prompts - Free
+    description: Maximum number of prompts that can be deployed to production on the Free plan.
+    scope: account
+    limit: 10
+    period: static
+    unit: prompts
+    plan: Free
+  - name: Team Members - Free
+    description: Maximum number of team members per organization on the Free plan.
+    scope: account
+    limit: 2
+    period: static
+    unit: users
+    plan: Free
+  - name: Team Members - Team
+    description: Maximum number of team members per organization on the Team plan.
+    scope: account
+    limit: 3
+    period: static
+    unit: users
+    plan: Team
+notes: >-
+  Parea AI does not publicly document per-minute or per-second request rate
+  limits for API calls. Request throttling policies for the REST API endpoints
+  (trace_log, experiment, completion, project) are not specified in public
+  documentation as of June 2026. Reach out to support@parea.ai for
+  current rate limit details.

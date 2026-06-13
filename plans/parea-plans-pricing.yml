@@ -1,0 +1,68 @@
+name: Parea AI Plans and Pricing
+description: Pricing tiers for the Parea AI LLM evaluation and observability platform
+specificationVersion: '0.1'
+url: https://www.parea.ai/#pricing
+plans:
+  - name: Free
+    description: >-
+      Full platform access for individuals and small teams getting started with
+      LLM evaluation and observability.
+    price: 0
+    currency: USD
+    period: month
+    features:
+      - Up to 2 team members
+      - 3,000 logs per month
+      - 1-month log retention
+      - 10 deployed prompts
+      - Evaluation and testing
+      - Observability and tracing
+      - Prompt playground
+      - Dataset management
+      - Discord community support
+  - name: Team
+    description: >-
+      Expanded capacity for growing AI engineering teams with higher log
+      volumes and more team members.
+    price: 150
+    currency: USD
+    period: month
+    features:
+      - Up to 3 team members
+      - 100,000 logs per month
+      - Extended log retention
+      - Unlimited deployed prompts
+      - Evaluation and testing
+      - Observability and tracing
+      - Prompt playground
+      - Dataset management
+      - Human review workflows
+      - Priority support
+  - name: Enterprise
+    description: >-
+      Custom pricing and configuration for large organizations requiring
+      enterprise-grade security, compliance, and support SLAs.
+    price: custom
+    currency: USD
+    period: month
+    features:
+      - Unlimited team members
+      - Custom log volumes
+      - Extended retention policies
+      - Self-hosting option via Docker
+      - SSO and advanced access controls
+      - Custom integrations
+      - Dedicated support
+      - SLA guarantees
+  - name: AI Consulting
+    description: >-
+      Custom consulting and advisory services for teams needing hands-on
+      guidance with LLM evaluation strategy and implementation.
+    price: custom
+    currency: USD
+    period: engagement
+    features:
+      - Expert LLM evaluation strategy
+      - Custom evaluation metric design
+      - Implementation support
+      - Training and onboarding

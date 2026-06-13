@@ -1,0 +1,76 @@
+aid: parea
+name: Parea AI
+description: >-
+  Parea AI is an LLM evaluation, testing, and observability platform designed
+  for AI engineering teams building production-ready LLM applications. The
+  platform provides a REST API for managing prompt versions, running automated
+  test suites, collecting human feedback, and tracking quality metrics across
+  model versions. Parea supports experiment tracking with aggregate statistics,
+  trace logging for end-to-end observability, and an LLM proxy gateway that
+  enables unified access to multiple model providers with built-in caching and
+  retries. Native SDKs for Python and TypeScript integrate with popular
+  frameworks including OpenAI, Anthropic, LangChain, Instructor, DSPy, and
+  LiteLLM, making it easy to instrument existing applications.
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/parea/refs/heads/main/apis.yml
+created: 2026-06-13
+modified: 2026-06-13
+specificationVersion: '0.19'
+tags:
+  - LLM
+  - Evaluation
+  - Observability
+  - Testing
+  - Prompt Management
+  - AI Engineering
+  - Machine Learning
+  - Tracing
+  - Experimentation
+  - Human Feedback
+apis:
+  - aid: parea:parea-rest-api
+    name: Parea REST API
+    description: >-
+      The Parea REST API enables programmatic access to the full Parea AI
+      platform, including trace logging for LLM calls, experiment creation and
+      management, dataset operations, LLM proxy completions, and project
+      management. Authentication is performed via the x-api-key header using a
+      secret key generated from the Parea settings page.
+    humanURL: https://docs.parea.ai/tutorials/api-only/cookbook
+    baseURL: https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run
+    tags:
+      - REST API
+      - Tracing
+      - Experiments
+      - Datasets
+      - LLM Proxy
+    properties:
+      - type: Documentation
+        url: https://docs.parea.ai
+      - type: OpenAPI
+        url: https://docs.parea.ai/api-reference/overview
+common:
+  - type: Website
+    url: https://www.parea.ai/
+  - type: Documentation
+    url: https://docs.parea.ai
+  - type: GitHubOrg
+    url: https://github.com/parea-ai
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/parea-ai/
+  - type: Blog
+    url: https://docs.parea.ai/blog/
+  - type: Pricing
+    url: https://www.parea.ai/#pricing
+  - type: X
+    url: https://twitter.com/PareaAI
+  - type: Plans
+    url: plans/parea-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/parea-rate-limits.yml
+  - type: FinOps
+    url: finops/parea-finops.yml
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

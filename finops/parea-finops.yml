@@ -1,0 +1,83 @@
+name: Parea AI FinOps
+description: >-
+  FinOps Framework FOCUS-aligned cost and usage guidance for Parea AI platform
+  consumption. Covers subscription costs, log volume tracking, and LLM proxy
+  pass-through costs for teams managing AI engineering budgets.
+specificationVersion: '1.0'
+url: https://www.parea.ai/#pricing
+provider: Parea AI
+currency: USD
+billingModel: subscription
+costCategories:
+  - name: Platform Subscription
+    description: Monthly subscription fee for access to the Parea AI platform.
+    type: fixed
+    plans:
+      - plan: Free
+        monthlyCost: 0
+      - plan: Team
+        monthlyCost: 150
+      - plan: Enterprise
+        monthlyCost: custom
+  - name: Log Volume
+    description: >-
+      Cost allocation driven by the number of trace logs recorded per month.
+      Exceeding plan log limits may require plan upgrade. Primary cost driver
+      for high-volume production applications.
+    type: consumption
+    unit: logs
+    tiers:
+      - name: Free Tier
+        limit: 3000
+        overageCost: plan-upgrade-required
+        plan: Free
+      - name: Team Tier
+        limit: 100000
+        overageCost: plan-upgrade-required
+        plan: Team
+      - name: Enterprise Tier
+        limit: custom
+        overageCost: negotiated
+        plan: Enterprise
+  - name: LLM Provider Pass-Through
+    description: >-
+      When using the Parea LLM proxy gateway (POST /api/parea/v1/completion),
+      underlying LLM provider costs (OpenAI, Anthropic, etc.) are billed
+      directly by those providers and are not included in Parea subscription
+      fees. Teams should budget separately for model token consumption.
+    type: pass-through
+    providers:
+      - OpenAI
+      - Anthropic
+      - Other configured LLM providers
+costOptimization:
+  - recommendation: Start on Free plan during development
+    description: >-
+      Use the Free plan (3k logs/month) during development and testing phases
+      to avoid subscription costs before production workloads are stable.
+  - recommendation: Monitor log volume against plan limits
+    description: >-
+      Track monthly log consumption in the Parea dashboard to anticipate
+      plan upgrade needs before hitting the 3k (Free) or 100k (Team) cap.
+  - recommendation: Use LLM evaluation to reduce model costs
+    description: >-
+      Leverage Parea's evaluation and A/B testing capabilities to identify
+      cheaper or smaller models that meet quality thresholds, reducing
+      downstream LLM provider token costs.
+  - recommendation: Leverage self-hosting for large deployments
+    description: >-
+      Enterprise teams with very high log volumes can reduce per-log costs
+      by using Parea's self-hosting Docker option instead of the managed cloud.
+  - recommendation: Use datasets to reduce redundant inference
+    description: >-
+      Build curated test datasets from production logs to run targeted
+      evaluations rather than exhaustive inference-heavy test runs on
+      every prompt change.
+allocation:
+  dimensions:
+    - name: Project
+      description: Allocate log costs by Parea project (project_uuid) to map usage to product features or teams.
+    - name: Experiment
+      description: Tag experiment runs to associate evaluation costs with specific model or prompt change initiatives.
+    - name: Environment
+      description: Distinguish production vs. staging log volumes using trace metadata to isolate operational costs.
