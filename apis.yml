@@ -54,6 +54,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/parea/refs/heads/main/openapi/parea-rest-api-openapi.yml
 common:
+  - type: OAuthScopes
+    url: scopes/parea-scopes.yml
   - type: Website
     url: https://www.parea.ai/
   - type: Documentation

@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/parea-rest-api-openapi.yml
+docs: https://docs.parea.ai/api-reference/authentication
+note: Parea authenticates with a per-organization API key passed in the x-api-key
+  header (or SDK constructor); no OAuth scopes are used or documented
+  (https://docs.parea.ai/api-reference/authentication).
+schemes:
+- name: OAuth2PasswordBearer
+  source: openapi/parea-rest-api-openapi.yml
+  flows:
+  - flow: password
+    tokenUrl: token
+scopes: []
