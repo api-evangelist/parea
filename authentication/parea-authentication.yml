@@ -1,0 +1,26 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/parea-rest-api-openapi.yml
+summary:
+  types:
+  - apiKey
+  - oauth2
+  api_key_in:
+  - header
+  oauth2_flows:
+  - password
+schemes:
+- name: OAuth2PasswordBearer
+  type: oauth2
+  flows:
+  - flow: password
+    tokenUrl: token
+    scopes: 0
+  sources:
+  - openapi/parea-rest-api-openapi.yml
+- name: APIKeyHeader
+  type: apiKey
+  in: header
+  parameter: x-api-key
+  sources:
+  - openapi/parea-rest-api-openapi.yml
