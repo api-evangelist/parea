@@ -54,6 +54,8 @@ apis:
         url: >-
           https://raw.githubusercontent.com/api-evangelist/parea/refs/heads/main/openapi/parea-rest-api-openapi.yml
 common:
+  - type: AgenticAccess
+    url: agentic-access/parea-agentic-access.yml
   - type: DomainSecurity
     url: security/parea-domain-security.yml
   - type: Authentication
