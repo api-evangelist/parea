@@ -12,7 +12,20 @@ description: >-
   frameworks including OpenAI, Anthropic, LangChain, Instructor, DSPy, and
   LiteLLM, making it easy to instrument existing applications.
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: freemium
+  onboarding: self-serve
+  trial: false
+  try_now: true
+  public: false
+  label: Freemium · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/parea.png
 url: https://raw.githubusercontent.com/api-evangelist/parea/refs/heads/main/apis.yml
 created: 2026-06-13
 modified: 2026-06-13
@@ -29,30 +42,18 @@ tags:
   - Experimentation
   - Human Feedback
 apis:
-  - aid: parea:parea-rest-api
-    name: Parea REST API
-    description: >-
-      The Parea REST API enables programmatic access to the full Parea AI
-      platform, including trace logging for LLM calls, experiment creation and
-      management, dataset operations, LLM proxy completions, and project
-      management. Authentication is performed via the x-api-key header using a
-      secret key generated from the Parea settings page.
-    humanURL: https://docs.parea.ai/tutorials/api-only/cookbook
-    baseURL: https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run
-    tags:
-      - REST API
-      - Tracing
-      - Experiments
-      - Datasets
-      - LLM Proxy
-    properties:
-      - type: Documentation
-        url: https://docs.parea.ai
-      - type: OpenAPI
-        url: https://docs.parea.ai/api-reference/overview
-      - type: OpenAPI
-        url: >-
-          https://raw.githubusercontent.com/api-evangelist/parea/refs/heads/main/openapi/parea-rest-api-openapi.yml
+- aid: parea:parea-parea-api
+  name: Parea AI Parea API
+  description: The Parea API from Parea AI — 19 operation(s) for parea.
+  humanURL: https://docs.parea.ai/tutorials/api-only/cookbook
+  baseURL: https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run
+  tags:
+  - Parea
+  properties:
+  - type: OpenAPI
+    url: openapi/parea-parea-api-openapi.yml
+  - type: Documentation
+    url: https://docs.parea.ai
 common:
   - type: AgenticAccess
     url: agentic-access/parea-agentic-access.yml
