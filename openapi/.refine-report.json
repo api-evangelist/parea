@@ -1,0 +1,14 @@
+{
+  "provider": "parea",
+  "sources": [
+    "parea-parea-api-openapi.yml"
+  ],
+  "outputs": [
+    "parea-parea-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
