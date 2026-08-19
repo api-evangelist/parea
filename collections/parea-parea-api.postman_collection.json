@@ -1,0 +1,3582 @@
+{
+  "item": [
+    {
+      "id": "e4fee93e-66ac-4718-880c-9af47bacaef0",
+      "name": "Parea",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "14887fe3-d0e2-4df2-8c25-a7e66cfe723f",
+          "name": "Health Check",
+          "request": {
+            "name": "Health Check",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "9430b197-804d-4370-8df8-11b0c2167360",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"key_0\": \"string\",\n  \"key_1\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e0085ce9-744a-4cd0-9f63-27ffdef49de0",
+          "name": "Completion",
+          "request": {
+            "name": "Completion",
+            "description": {
+              "content": "Get a completion response using either one of your organizationâ€™s deployed prompts, or by providing completion details including prompt and inputs in the request.\nThis endpoint acts as a LLM gateway/proxy endpoint to generate completions from different LLMs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "completion"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"llm_inputs\": \"<object>\",\n  \"llm_configuration\": {},\n  \"project_name\": \"default\",\n  \"project_uuid\": \"<string>\",\n  \"experiment_uuid\": \"<string>\",\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"deployment_id\": \"<string>\",\n  \"eval_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"target\": \"<string>\",\n  \"trace_id\": \"<string>\",\n  \"trace_name\": \"<string>\",\n  \"provider_api_key\": \"<string>\",\n  \"cache\": true,\n  \"log_omit_inputs\": false,\n  \"log_omit_outputs\": false,\n  \"log_omit\": false,\n  \"log_sample_rate\": 1,\n  \"inference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"retry\": false,\n  \"fallback_strategy\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "d6a0dd7b-0eb3-4ba1-85ba-6c4a8f8c9ad4",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "completion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"llm_inputs\": \"<object>\",\n  \"llm_configuration\": {},\n  \"project_name\": \"default\",\n  \"project_uuid\": \"<string>\",\n  \"experiment_uuid\": \"<string>\",\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"deployment_id\": \"<string>\",\n  \"eval_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"target\": \"<string>\",\n  \"trace_id\": \"<string>\",\n  \"trace_name\": \"<string>\",\n  \"provider_api_key\": \"<string>\",\n  \"cache\": true,\n  \"log_omit_inputs\": false,\n  \"log_omit_outputs\": false,\n  \"log_omit\": false,\n  \"log_sample_rate\": 1,\n  \"inference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"retry\": false,\n  \"fallback_strategy\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": \"string\",\n  \"latency\": 3542.6966751042555,\n  \"input_tokens\": 5242,\n  \"output_tokens\": 1337,\n  \"total_tokens\": 4839,\n  \"cost\": 9180.412481988651,\n  \"model\": \"string\",\n  \"provider\": \"string\",\n  \"cache_hit\": true,\n  \"status\": \"string\",\n  \"start_timestamp\": \"string\",\n  \"end_timestamp\": \"string\",\n  \"inference_id\": \"string\",\n  \"error\": \"string\",\n  \"trace_id\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d13ac136-a309-464a-a481-947ebcaf6064",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "completion"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"llm_inputs\": \"<object>\",\n  \"llm_configuration\": {},\n  \"project_name\": \"default\",\n  \"project_uuid\": \"<string>\",\n  \"experiment_uuid\": \"<string>\",\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"deployment_id\": \"<string>\",\n  \"eval_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"target\": \"<string>\",\n  \"trace_id\": \"<string>\",\n  \"trace_name\": \"<string>\",\n  \"provider_api_key\": \"<string>\",\n  \"cache\": true,\n  \"log_omit_inputs\": false,\n  \"log_omit_outputs\": false,\n  \"log_omit\": false,\n  \"log_sample_rate\": 1,\n  \"inference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"retry\": false,\n  \"fallback_strategy\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2fa0e365-d3fe-4778-a9d7-841466a3f8a0",
+          "name": "Stream Completion",
+          "request": {
+            "name": "Stream Completion",
+            "description": {
+              "content": "Get a completion response using either one of your organizationâ€™s deployed prompts, or by providing completion details including prompt and inputs in the request.\n\nThis endpoint acts as a LLM gateway/proxy endpoint to generate completions from different LLMs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "completion",
+                "stream"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"llm_inputs\": \"<object>\",\n  \"llm_configuration\": {},\n  \"project_name\": \"default\",\n  \"project_uuid\": \"<string>\",\n  \"experiment_uuid\": \"<string>\",\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"deployment_id\": \"<string>\",\n  \"eval_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"target\": \"<string>\",\n  \"trace_id\": \"<string>\",\n  \"trace_name\": \"<string>\",\n  \"provider_api_key\": \"<string>\",\n  \"cache\": true,\n  \"log_omit_inputs\": false,\n  \"log_omit_outputs\": false,\n  \"log_omit\": false,\n  \"log_sample_rate\": 1,\n  \"inference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"retry\": false,\n  \"fallback_strategy\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"stream\": false\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c62fc626-6012-4fdb-ac25-57cfdb4af9e8",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "completion",
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"llm_inputs\": \"<object>\",\n  \"llm_configuration\": {},\n  \"project_name\": \"default\",\n  \"project_uuid\": \"<string>\",\n  \"experiment_uuid\": \"<string>\",\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"deployment_id\": \"<string>\",\n  \"eval_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"target\": \"<string>\",\n  \"trace_id\": \"<string>\",\n  \"trace_name\": \"<string>\",\n  \"provider_api_key\": \"<string>\",\n  \"cache\": true,\n  \"log_omit_inputs\": false,\n  \"log_omit_outputs\": false,\n  \"log_omit\": false,\n  \"log_sample_rate\": 1,\n  \"inference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"retry\": false,\n  \"fallback_strategy\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8b39868f-977f-4444-a2d3-ac8cc8d73937",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "completion",
+                    "stream"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"llm_inputs\": \"<object>\",\n  \"llm_configuration\": {},\n  \"project_name\": \"default\",\n  \"project_uuid\": \"<string>\",\n  \"experiment_uuid\": \"<string>\",\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"deployment_id\": \"<string>\",\n  \"eval_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"target\": \"<string>\",\n  \"trace_id\": \"<string>\",\n  \"trace_name\": \"<string>\",\n  \"provider_api_key\": \"<string>\",\n  \"cache\": true,\n  \"log_omit_inputs\": false,\n  \"log_omit_outputs\": false,\n  \"log_omit\": false,\n  \"log_sample_rate\": 1,\n  \"inference_id\": \"<string>\",\n  \"name\": \"<string>\",\n  \"retry\": false,\n  \"fallback_strategy\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"stream\": false\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e08039b7-de12-4853-b94d-be15df41a6d7",
+          "name": "Fetch Deployed Prompt",
+          "request": {
+            "name": "Fetch Deployed Prompt",
+            "description": {
+              "content": "Given a deployment_id, fetches the deployed prompt and its details. Can be optionally used to fill-in the templated prompt with provided inputs.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "deployed-prompt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"deployment_id\": \"<string>\",\n  \"llm_inputs\": \"<object>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f96f3d4f-b1d7-479e-a542-b211eed10b84",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "deployed-prompt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deployment_id\": \"p-qZrnFesaeCpqcXJ_yL3wi\",\n  \"llm_inputs\": {\n    \"x\": \"Python\",\n    \"y\": \"Flask\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"deployment_id\": \"string\",\n  \"version_number\": 4031.6559341451907,\n  \"name\": \"string\",\n  \"functions\": [\n    \"string\",\n    \"string\"\n  ],\n  \"function_call\": \"string\",\n  \"prompt\": {\n    \"raw_messages\": [],\n    \"messages\": [],\n    \"inputs\": {}\n  },\n  \"model\": \"string\",\n  \"provider\": \"<string>\",\n  \"model_params\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7f4cc654-a3cd-406b-b344-22f5bcb7980c",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "deployed-prompt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"deployment_id\": \"p-qZrnFesaeCpqcXJ_yL3wi\",\n  \"llm_inputs\": {\n    \"x\": \"Python\",\n    \"y\": \"Flask\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bbec50aa-6321-4bb5-830b-f588aab822e7",
+          "name": "Record Feedback",
+          "request": {
+            "name": "Record Feedback",
+            "description": {
+              "content": "Record any (user) feedback & ground truth/correction of output for a log.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "feedback"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"score\": \"<number>\",\n  \"trace_id\": \"<string>\",\n  \"inference_id\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"target\": \"<string>\",\n  \"organization_id\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e44d2703-695d-46ec-9f59-fc6f2eaa8200",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "feedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<number>\",\n  \"trace_id\": \"<string>\",\n  \"inference_id\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"target\": \"<string>\",\n  \"organization_id\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "85007c23-f74e-4b8c-a0bb-c1c8b079c9ac",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "feedback"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"score\": \"<number>\",\n  \"trace_id\": \"<string>\",\n  \"inference_id\": \"<string>\",\n  \"comment\": \"<string>\",\n  \"target\": \"<string>\",\n  \"organization_id\": \"<string>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bb18c5ed-e0b3-4095-ad4c-8d0ae0433ace",
+          "name": "Update Trace Log",
+          "request": {
+            "name": "Update Trace Log",
+            "description": {
+              "content": "Update fields of a trace log.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "trace_log"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"trace_id\": \"<string>\",\n  \"field_name_to_value_map\": \"<object>\",\n  \"root_trace_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "07ec87a0-84a1-4c84-8167-704f249da2a0",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "trace_log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"trace_id\": \"<string>\",\n  \"field_name_to_value_map\": \"<object>\",\n  \"root_trace_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8e726c61-6a55-47e8-91a1-3a39ddcaf8d1",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "trace_log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"trace_id\": \"<string>\",\n  \"field_name_to_value_map\": \"<object>\",\n  \"root_trace_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6fff0978-48c0-4112-9ca2-5837705e5624",
+          "name": "Record Trace Log",
+          "request": {
+            "name": "Record Trace Log",
+            "description": {
+              "content": "Log a (LLM) span to visualize inference results, or chains.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "trace_log"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"trace_id\": \"<string>\",\n  \"start_timestamp\": \"<string>\",\n  \"configuration\": {},\n  \"inputs\": \"<object>\",\n  \"output\": \"<string>\",\n  \"target\": \"<string>\",\n  \"latency\": 0,\n  \"time_to_first_token\": \"<number>\",\n  \"input_tokens\": 0,\n  \"output_tokens\": 0,\n  \"total_tokens\": 0,\n  \"cost\": 0,\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"project_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"error\": \"<string>\",\n  \"output_for_eval_metrics\": \"<string>\",\n  \"evaluation_metric_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"scores\": [\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    }\n  ],\n  \"feedback_score\": \"<number>\",\n  \"apply_eval_frac\": 1,\n  \"log_sample_rate\": 1,\n  \"deployment_id\": \"<string>\",\n  \"cache_hit\": false,\n  \"trace_name\": \"<string>\",\n  \"children\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"children_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"end_timestamp\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"session_id\": \"<string>\",\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"experiment_uuid\": \"<string>\",\n  \"images\": [\n    {\n      \"url\": \"<string>\",\n      \"caption\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"caption\": \"<string>\"\n    }\n  ],\n  \"comments\": [\n    {\n      \"trace_id\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"id\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"user_email_address\": \"<string>\"\n    },\n    {\n      \"trace_id\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"id\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"user_email_address\": \"<string>\"\n    }\n  ],\n  \"annotations\": {\n    \"key_0\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    }\n  },\n  \"depth\": 0,\n  \"execution_order\": 0,\n  \"evaluation_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fill_children\": false,\n  \"project_uuid\": \"<string>\",\n  \"organization_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3b0b3a34-87c2-47c4-b818-a0467d7d73e7",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "trace_log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"trace_id\": \"<string>\",\n  \"start_timestamp\": \"<string>\",\n  \"configuration\": {},\n  \"inputs\": \"<object>\",\n  \"output\": \"<string>\",\n  \"target\": \"<string>\",\n  \"latency\": 0,\n  \"time_to_first_token\": \"<number>\",\n  \"input_tokens\": 0,\n  \"output_tokens\": 0,\n  \"total_tokens\": 0,\n  \"cost\": 0,\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"project_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"error\": \"<string>\",\n  \"output_for_eval_metrics\": \"<string>\",\n  \"evaluation_metric_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"scores\": [\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    }\n  ],\n  \"feedback_score\": \"<number>\",\n  \"apply_eval_frac\": 1,\n  \"log_sample_rate\": 1,\n  \"deployment_id\": \"<string>\",\n  \"cache_hit\": false,\n  \"trace_name\": \"<string>\",\n  \"children\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"children_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"end_timestamp\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"session_id\": \"<string>\",\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"experiment_uuid\": \"<string>\",\n  \"images\": [\n    {\n      \"url\": \"<string>\",\n      \"caption\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"caption\": \"<string>\"\n    }\n  ],\n  \"comments\": [\n    {\n      \"trace_id\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"id\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"user_email_address\": \"<string>\"\n    },\n    {\n      \"trace_id\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"id\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"user_email_address\": \"<string>\"\n    }\n  ],\n  \"annotations\": {\n    \"key_0\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_2\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_3\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    },\n    \"key_1\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    },\n    \"key_2\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_2\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    },\n    \"key_3\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_2\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    },\n    \"key_4\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    }\n  },\n  \"depth\": 0,\n  \"execution_order\": 0,\n  \"evaluation_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fill_children\": false,\n  \"project_uuid\": \"<string>\",\n  \"organization_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d49786b6-03a1-4771-b044-04426e2dbb24",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "trace_log"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"trace_id\": \"<string>\",\n  \"start_timestamp\": \"<string>\",\n  \"configuration\": {},\n  \"inputs\": \"<object>\",\n  \"output\": \"<string>\",\n  \"target\": \"<string>\",\n  \"latency\": 0,\n  \"time_to_first_token\": \"<number>\",\n  \"input_tokens\": 0,\n  \"output_tokens\": 0,\n  \"total_tokens\": 0,\n  \"cost\": 0,\n  \"parent_trace_id\": \"<string>\",\n  \"root_trace_id\": \"<string>\",\n  \"project_name\": \"<string>\",\n  \"status\": \"<string>\",\n  \"error\": \"<string>\",\n  \"output_for_eval_metrics\": \"<string>\",\n  \"evaluation_metric_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"scores\": [\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    }\n  ],\n  \"feedback_score\": \"<number>\",\n  \"apply_eval_frac\": 1,\n  \"log_sample_rate\": 1,\n  \"deployment_id\": \"<string>\",\n  \"cache_hit\": false,\n  \"trace_name\": \"<string>\",\n  \"children\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"children_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"end_timestamp\": \"<string>\",\n  \"end_user_identifier\": \"<string>\",\n  \"session_id\": \"<string>\",\n  \"metadata\": \"<object>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"experiment_uuid\": \"<string>\",\n  \"images\": [\n    {\n      \"url\": \"<string>\",\n      \"caption\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"caption\": \"<string>\"\n    }\n  ],\n  \"comments\": [\n    {\n      \"trace_id\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"id\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"user_email_address\": \"<string>\"\n    },\n    {\n      \"trace_id\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"id\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"user_email_address\": \"<string>\"\n    }\n  ],\n  \"annotations\": {\n    \"key_0\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_2\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_3\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    },\n    \"key_1\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    },\n    \"key_2\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_2\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    },\n    \"key_3\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_2\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    },\n    \"key_4\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    }\n  },\n  \"depth\": 0,\n  \"execution_order\": 0,\n  \"evaluation_metric_ids\": [\n    \"<integer>\",\n    \"<integer>\"\n  ],\n  \"fill_children\": false,\n  \"project_uuid\": \"<string>\",\n  \"organization_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "040ca46e-b567-4403-bd50-854314ee5d61",
+          "name": "Record Langchain Trace Log",
+          "request": {
+            "name": "Record Langchain Trace Log",
+            "description": {},
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "trace_log",
+                "langchain"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "a49ff85f-926a-44b3-bed8-a4d86653bc7e",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "trace_log",
+                    "langchain"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "7eaeb2b6-3f86-419e-9c54-ba996d12e455",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "trace_log",
+                    "langchain"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "0da5100a-66e3-4f12-be66-1f622679173b",
+          "name": "Create Experiment Api",
+          "request": {
+            "name": "Create Experiment Api",
+            "description": {
+              "content": "Create an experiment and get the associated experiment uuid.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "experiment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"project_uuid\": \"<string>\",\n  \"run_name\": \"<string>\",\n  \"is_public\": false,\n  \"metadata\": {\n    \"key_0\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "19f5b428-3f28-416f-b47b-2f98d505249a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"project_uuid\": \"<string>\",\n  \"run_name\": \"<string>\",\n  \"is_public\": false,\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"project_uuid\": \"string\",\n  \"uuid\": \"string\",\n  \"created_at\": \"string\",\n  \"run_name\": \"string\",\n  \"is_public\": false,\n  \"metadata\": {\n    \"key_0\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "4043f33b-8767-4d3d-ac3e-5d4cd767953a",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"project_uuid\": \"<string>\",\n  \"run_name\": \"<string>\",\n  \"is_public\": false,\n  \"metadata\": {\n    \"key_0\": \"<string>\",\n    \"key_1\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07ea46f9-41f1-4598-b497-668731c79803",
+          "name": "Get Experiment Stats Api",
+          "request": {
+            "name": "Get Experiment Stats Api",
+            "description": {
+              "content": "Fetches aggregated stats for every root-level trace log in an experiment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "experiment",
+                ":experiment_uuid",
+                "stats"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "experiment_uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "c74d67a1-a4d2-431c-bb6c-4bab0162c6dc",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiment",
+                    ":experiment_uuid",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "experiment_uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"parent_trace_stats\": [\n    {\n      \"trace_id\": \"string\",\n      \"latency\": 0,\n      \"input_tokens\": 0,\n      \"output_tokens\": 0,\n      \"total_tokens\": 0,\n      \"cost\": 9056.435257632207,\n      \"scores\": [\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"trace_id\": \"string\",\n      \"latency\": 0,\n      \"input_tokens\": 0,\n      \"output_tokens\": 0,\n      \"total_tokens\": 0,\n      \"cost\": 5589.107496137278,\n      \"scores\": [\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a01d6c91-f024-46c2-9a90-f0803fa27e06",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiment",
+                    ":experiment_uuid",
+                    "stats"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "experiment_uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "deaf1f16-1389-47c0-b679-dfe06ce93c4f",
+          "name": "Finish Experiment Api",
+          "request": {
+            "name": "Finish Experiment Api",
+            "description": {
+              "content": "Finishes an experiment, calculates stats and returns all stats for root trace logs",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "experiment",
+                ":experiment_uuid",
+                "finished"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "experiment_uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"status\": \"completed\",\n  \"dataset_level_stats\": [\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "372c3214-cb4c-4a21-bde3-d27436e05b33",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiment",
+                    ":experiment_uuid",
+                    "finished"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "experiment_uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"completed\",\n  \"dataset_level_stats\": [\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"parent_trace_stats\": [\n    {\n      \"trace_id\": \"string\",\n      \"latency\": 0,\n      \"input_tokens\": 0,\n      \"output_tokens\": 0,\n      \"total_tokens\": 0,\n      \"cost\": 3856.194239095435,\n      \"scores\": [\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        }\n      ]\n    },\n    {\n      \"trace_id\": \"string\",\n      \"latency\": 0,\n      \"input_tokens\": 0,\n      \"output_tokens\": 0,\n      \"total_tokens\": 0,\n      \"cost\": 6199.435600792156,\n      \"scores\": [\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "a4b46dc9-0596-4691-86d1-bacfb191e8cb",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiment",
+                    ":experiment_uuid",
+                    "finished"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "experiment_uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"status\": \"completed\",\n  \"dataset_level_stats\": [\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "6556d36b-7e2c-4652-aa51-ab767cf1de2f",
+          "name": "Create Or Get Project Api",
+          "request": {
+            "name": "Create Or Get Project Api",
+            "description": {
+              "content": "Create a project or get the project if it already exists. Is used to find out UUID of project.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "project"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "f143befd-329d-4513-83cd-704dd22deeba",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "project"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"uuid\": \"string\",\n  \"created_at\": \"string\",\n  \"was_created\": true\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9daefdbc-9866-4892-96e5-b156a5d738dc",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "project"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "15d3de17-f7f3-4e42-aacb-2d291671a49a",
+          "name": "Get Test Case Collection By Identifier",
+          "request": {
+            "name": "Get Test Case Collection By Identifier",
+            "description": {
+              "content": "Fetches dataset/test case collection by its ID or name.\n\nArgs:\n    test_collection_identifier (Union[str, int]): ID or name of the test case collection/dataset.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "collection",
+                ":test_collection_identifier"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "test_collection_identifier",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "6b85f101-4a3f-46bb-a831-897f4739bb51",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "collection",
+                    ":test_collection_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "test_collection_identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 7474,\n  \"name\": \"string\",\n  \"column_names\": [\n    \"string\",\n    \"string\"\n  ],\n  \"created_at\": \"string\",\n  \"last_updated_at\": \"string\",\n  \"test_cases\": {\n    \"key_0\": {\n      \"inputs\": {\n        \"key_0\": \"string\"\n      },\n      \"id\": 7894,\n      \"test_case_collection_id\": 7794,\n      \"target\": \"string\"\n    },\n    \"key_1\": {\n      \"inputs\": {\n        \"key_0\": \"string\",\n        \"key_1\": \"string\",\n        \"key_2\": \"string\"\n      },\n      \"id\": 5278,\n      \"test_case_collection_id\": 4432,\n      \"target\": \"string\"\n    }\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "aaf1e874-5318-4958-a2c7-c4974a869eae",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "collection",
+                    ":test_collection_identifier"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "test_collection_identifier",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "8749e7a4-909a-4e55-a9f6-e14a637735e9",
+          "name": "Create Collection",
+          "request": {
+            "name": "Create Collection",
+            "description": {
+              "content": "Creates a dataset",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "collection"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"column_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"test_cases\": [\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    },\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "df740a39-e9fa-4e31-8d31-d3c5cd0ee7bf",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"column_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"test_cases\": [\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    },\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"id\": 4550,\n  \"last_updated_at\": \"string\",\n  \"test_case_ids\": [\n    9335,\n    6459\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ba5d83fa-42dc-4769-bbcf-c63db0559821",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "collection"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"column_names\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"test_cases\": [\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    },\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81bc8fcb-72c0-49b0-ab14-ae0b2b35f54b",
+          "name": "Create Test Cases For Dataset",
+          "request": {
+            "name": "Create Test Cases For Dataset",
+            "description": {
+              "content": "Adds items/test cases to a dataset. If the dataset does not exist, it will be created.\nReturns the IDs of the created items/test cases.\n\nReturns:\n    List[int]: List of IDs of the created items/test cases.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "testcases"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"test_cases\": [\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    },\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    }\n  ],\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "b002dd39-2226-429a-8a52-6cf9d8eb571a",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "testcases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"test_cases\": [\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    },\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    }\n  ],\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  7790,\n  8335\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "51c510ea-8b01-4d3e-adb9-cf3b0b83e568",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "testcases"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"test_cases\": [\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\",\n        \"key_2\": \"<string>\",\n        \"key_3\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    },\n    {\n      \"inputs\": {\n        \"key_0\": \"<string>\",\n        \"key_1\": \"<string>\"\n      },\n      \"target\": \"<string>\"\n    }\n  ],\n  \"id\": \"<integer>\",\n  \"name\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ffce6b98-b4bd-425d-a6fd-b0e8dc41772b",
+          "name": "Get Trace Log Api",
+          "request": {
+            "name": "Get Trace Log Api",
+            "description": {
+              "content": "Fetches a trace log by its UUID.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "trace_log",
+                ":trace_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "trace_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "id": "be687d8f-8e37-47fc-b6a7-9182bb9cbe52",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "trace_log",
+                    ":trace_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"trace_id\": \"string\",\n  \"start_timestamp\": \"string\",\n  \"configuration\": {},\n  \"inputs\": {},\n  \"output\": \"string\",\n  \"target\": \"string\",\n  \"latency\": 0,\n  \"time_to_first_token\": 9120.561544151307,\n  \"input_tokens\": 0,\n  \"output_tokens\": 0,\n  \"total_tokens\": 0,\n  \"cost\": 0,\n  \"parent_trace_id\": \"string\",\n  \"root_trace_id\": \"string\",\n  \"project_name\": \"string\",\n  \"status\": \"string\",\n  \"error\": \"string\",\n  \"output_for_eval_metrics\": \"string\",\n  \"evaluation_metric_names\": [\n    \"string\",\n    \"string\"\n  ],\n  \"scores\": [\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"score\": \"<number>\",\n      \"evaluation_metric_id\": \"<integer>\",\n      \"reason\": \"<string>\"\n    }\n  ],\n  \"feedback_score\": 7990.90439836577,\n  \"apply_eval_frac\": 1,\n  \"log_sample_rate\": 1,\n  \"deployment_id\": \"string\",\n  \"cache_hit\": false,\n  \"trace_name\": \"string\",\n  \"children\": [\n    \"string\",\n    \"string\"\n  ],\n  \"children_ids\": [\n    5275,\n    9991\n  ],\n  \"end_timestamp\": \"string\",\n  \"end_user_identifier\": \"string\",\n  \"session_id\": \"string\",\n  \"metadata\": {},\n  \"tags\": [\n    \"string\",\n    \"string\"\n  ],\n  \"experiment_uuid\": \"string\",\n  \"images\": [\n    {\n      \"url\": \"<string>\",\n      \"caption\": \"<string>\"\n    },\n    {\n      \"url\": \"<string>\",\n      \"caption\": \"<string>\"\n    }\n  ],\n  \"comments\": [\n    {\n      \"trace_id\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"id\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"user_email_address\": \"<string>\"\n    },\n    {\n      \"trace_id\": \"<string>\",\n      \"comment\": \"<string>\",\n      \"id\": \"<string>\",\n      \"user_id\": \"<string>\",\n      \"created_at\": \"<string>\",\n      \"user_email_address\": \"<string>\"\n    }\n  ],\n  \"annotations\": {\n    \"key_0\": {\n      \"key_0\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      },\n      \"key_1\": {\n        \"trace_id\": \"<string>\",\n        \"defined_annotation_id\": \"<integer>\",\n        \"created_at\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"score\": \"<number>\",\n        \"value\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_email_address\": \"<string>\",\n        \"annotation_name\": \"<string>\"\n      }\n    }\n  },\n  \"depth\": 0,\n  \"execution_order\": 0,\n  \"evaluation_metric_ids\": [\n    5914,\n    6941\n  ],\n  \"fill_children\": false,\n  \"project_uuid\": \"string\",\n  \"organization_id\": \"string\",\n  \"children_logs\": [\n    {\n      \"trace_id\": \"string\",\n      \"start_timestamp\": \"string\",\n      \"configuration\": {},\n      \"inputs\": {},\n      \"output\": \"string\",\n      \"target\": \"string\",\n      \"latency\": 0,\n      \"time_to_first_token\": 9224.52091186688,\n      \"input_tokens\": 0,\n      \"output_tokens\": 0,\n      \"total_tokens\": 0,\n      \"cost\": 0,\n      \"parent_trace_id\": \"string\",\n      \"root_trace_id\": \"string\",\n      \"project_name\": \"string\",\n      \"status\": \"string\",\n      \"error\": \"string\",\n      \"output_for_eval_metrics\": \"string\",\n      \"evaluation_metric_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"scores\": [\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        }\n      ],\n      \"feedback_score\": 4427.050793936541,\n      \"apply_eval_frac\": 1,\n      \"log_sample_rate\": 1,\n      \"deployment_id\": \"string\",\n      \"cache_hit\": false,\n      \"trace_name\": \"string\",\n      \"children\": [\n        \"string\",\n        \"string\"\n      ],\n      \"children_ids\": [\n        4802,\n        3696\n      ],\n      \"end_timestamp\": \"string\",\n      \"end_user_identifier\": \"string\",\n      \"session_id\": \"string\",\n      \"metadata\": {},\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"experiment_uuid\": \"string\",\n      \"images\": [\n        {\n          \"url\": \"<string>\",\n          \"caption\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"caption\": \"<string>\"\n        }\n      ],\n      \"comments\": [\n        {\n          \"trace_id\": \"<string>\",\n          \"comment\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"created_at\": \"<string>\",\n          \"user_email_address\": \"<string>\"\n        },\n        {\n          \"trace_id\": \"<string>\",\n          \"comment\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"created_at\": \"<string>\",\n          \"user_email_address\": \"<string>\"\n        }\n      ],\n      \"annotations\": {\n        \"key_0\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_1\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        },\n        \"key_1\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_1\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        },\n        \"key_2\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_1\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        },\n        \"key_3\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        }\n      },\n      \"depth\": 0,\n      \"execution_order\": 0,\n      \"evaluation_metric_ids\": [\n        6823,\n        6658\n      ],\n      \"fill_children\": false,\n      \"project_uuid\": \"string\",\n      \"organization_id\": \"string\",\n      \"children_logs\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n        }\n      ]\n    },\n    {\n      \"trace_id\": \"string\",\n      \"start_timestamp\": \"string\",\n      \"configuration\": {},\n      \"inputs\": {},\n      \"output\": \"string\",\n      \"target\": \"string\",\n      \"latency\": 0,\n      \"time_to_first_token\": 1561.5576949182741,\n      \"input_tokens\": 0,\n      \"output_tokens\": 0,\n      \"total_tokens\": 0,\n      \"cost\": 0,\n      \"parent_trace_id\": \"string\",\n      \"root_trace_id\": \"string\",\n      \"project_name\": \"string\",\n      \"status\": \"string\",\n      \"error\": \"string\",\n      \"output_for_eval_metrics\": \"string\",\n      \"evaluation_metric_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"scores\": [\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        }\n      ],\n      \"feedback_score\": 7806.108574415269,\n      \"apply_eval_frac\": 1,\n      \"log_sample_rate\": 1,\n      \"deployment_id\": \"string\",\n      \"cache_hit\": false,\n      \"trace_name\": \"string\",\n      \"children\": [\n        \"string\",\n        \"string\"\n      ],\n      \"children_ids\": [\n        7135,\n        5408\n      ],\n      \"end_timestamp\": \"string\",\n      \"end_user_identifier\": \"string\",\n      \"session_id\": \"string\",\n      \"metadata\": {},\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"experiment_uuid\": \"string\",\n      \"images\": [\n        {\n          \"url\": \"<string>\",\n          \"caption\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"caption\": \"<string>\"\n        }\n      ],\n      \"comments\": [\n        {\n          \"trace_id\": \"<string>\",\n          \"comment\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"created_at\": \"<string>\",\n          \"user_email_address\": \"<string>\"\n        },\n        {\n          \"trace_id\": \"<string>\",\n          \"comment\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"created_at\": \"<string>\",\n          \"user_email_address\": \"<string>\"\n        }\n      ],\n      \"annotations\": {\n        \"key_0\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        },\n        \"key_1\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_1\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        }\n      },\n      \"depth\": 0,\n      \"execution_order\": 0,\n      \"evaluation_metric_ids\": [\n        6924,\n        6167\n      ],\n      \"fill_children\": false,\n      \"project_uuid\": \"string\",\n      \"organization_id\": \"string\",\n      \"children_logs\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "093de783-3f34-4d01-9239-fbb5ebdbc06e",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "trace_log",
+                    ":trace_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trace_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2a36cd5d-7e33-425a-a6e0-26e94325ea6b",
+          "name": "List Experiments Api",
+          "request": {
+            "name": "List Experiments Api",
+            "description": {
+              "content": "Lists experiments given a set of filters incl. their high-level statistics.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "experiments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_name\": \"<string>\",\n  \"metadata_filter\": \"<object>\",\n  \"experiment_name_filter\": \"<string>\",\n  \"run_name_filter\": \"<string>\",\n  \"experiment_uuids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9a285cb6-abcf-446e-bf1b-3613919c9864",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"metadata_filter\": \"<object>\",\n  \"experiment_name_filter\": \"<string>\",\n  \"run_name_filter\": \"<string>\",\n  \"experiment_uuids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"name\": \"string\",\n    \"project_uuid\": \"string\",\n    \"uuid\": \"string\",\n    \"created_at\": \"string\",\n    \"status\": \"<string>\",\n    \"pinned_stats\": [\n      {\n        \"var1\": \"string\",\n        \"operation\": \"variance\",\n        \"value\": 5232.9470212253,\n        \"var2\": \"string\"\n      },\n      {\n        \"var1\": \"string\",\n        \"operation\": \"min\",\n        \"value\": 1838.2574949528496,\n        \"var2\": \"string\"\n      }\n    ],\n    \"run_name\": \"string\",\n    \"is_public\": false,\n    \"metadata\": {\n      \"key_0\": \"string\"\n    },\n    \"num_samples\": 5481\n  },\n  {\n    \"name\": \"string\",\n    \"project_uuid\": \"string\",\n    \"uuid\": \"string\",\n    \"created_at\": \"string\",\n    \"status\": \"<string>\",\n    \"pinned_stats\": [\n      {\n        \"var1\": \"string\",\n        \"operation\": \"standard_deviation\",\n        \"value\": 8812.98771615919,\n        \"var2\": \"string\"\n      },\n      {\n        \"var1\": \"string\",\n        \"operation\": \"min\",\n        \"value\": 8128.3063967436165,\n        \"var2\": \"string\"\n      }\n    ],\n    \"run_name\": \"string\",\n    \"is_public\": false,\n    \"metadata\": {\n      \"key_0\": \"string\",\n      \"key_1\": \"string\"\n    },\n    \"num_samples\": 9796\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3c158c9c-2022-4f87-a5d6-13ce41b4f255",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"metadata_filter\": \"<object>\",\n  \"experiment_name_filter\": \"<string>\",\n  \"run_name_filter\": \"<string>\",\n  \"experiment_uuids\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dee01234-67ad-4092-9439-de4695f5a7c0",
+          "name": "Get Experiment Trace Logs Api",
+          "request": {
+            "name": "Get Experiment Trace Logs Api",
+            "description": {
+              "content": "Fetches all trace logs for an experiment.\n\nArgs:\n    experiment_uuid (str): UUID of the experiment.\n\nReturns:\n    list[TraceLogTreeSchema]: List of trace logs for the experiment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "experiment",
+                ":experiment_uuid",
+                "trace_logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "experiment_uuid",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"filter_field\": \"<string>\",\n  \"filter_key\": \"<string>\",\n  \"filter_operator\": \"<string>\",\n  \"filter_value\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4b14fe80-85a8-44aa-8487-630e84bb4d94",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiment",
+                    ":experiment_uuid",
+                    "trace_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "experiment_uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_field\": \"<string>\",\n  \"filter_key\": \"<string>\",\n  \"filter_operator\": \"<string>\",\n  \"filter_value\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  {\n    \"trace_id\": \"string\",\n    \"start_timestamp\": \"string\",\n    \"configuration\": {},\n    \"inputs\": {},\n    \"output\": \"string\",\n    \"target\": \"string\",\n    \"latency\": 0,\n    \"time_to_first_token\": 9076.73562275902,\n    \"input_tokens\": 0,\n    \"output_tokens\": 0,\n    \"total_tokens\": 0,\n    \"cost\": 0,\n    \"parent_trace_id\": \"string\",\n    \"root_trace_id\": \"string\",\n    \"project_name\": \"string\",\n    \"status\": \"string\",\n    \"error\": \"string\",\n    \"output_for_eval_metrics\": \"string\",\n    \"evaluation_metric_names\": [\n      \"string\",\n      \"string\"\n    ],\n    \"scores\": [\n      {\n        \"name\": \"<string>\",\n        \"score\": \"<number>\",\n        \"evaluation_metric_id\": \"<integer>\",\n        \"reason\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"score\": \"<number>\",\n        \"evaluation_metric_id\": \"<integer>\",\n        \"reason\": \"<string>\"\n      }\n    ],\n    \"feedback_score\": 3239.526384942978,\n    \"apply_eval_frac\": 1,\n    \"log_sample_rate\": 1,\n    \"deployment_id\": \"string\",\n    \"cache_hit\": false,\n    \"trace_name\": \"string\",\n    \"children\": [\n      \"string\",\n      \"string\"\n    ],\n    \"children_ids\": [\n      6745,\n      8697\n    ],\n    \"end_timestamp\": \"string\",\n    \"end_user_identifier\": \"string\",\n    \"session_id\": \"string\",\n    \"metadata\": {},\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"experiment_uuid\": \"string\",\n    \"images\": [\n      {\n        \"url\": \"<string>\",\n        \"caption\": \"<string>\"\n      },\n      {\n        \"url\": \"<string>\",\n        \"caption\": \"<string>\"\n      }\n    ],\n    \"comments\": [\n      {\n        \"trace_id\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"created_at\": \"<string>\",\n        \"user_email_address\": \"<string>\"\n      },\n      {\n        \"trace_id\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"created_at\": \"<string>\",\n        \"user_email_address\": \"<string>\"\n      }\n    ],\n    \"annotations\": {\n      \"key_0\": {\n        \"key_0\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        },\n        \"key_1\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        },\n        \"key_2\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        }\n      },\n      \"key_1\": {\n        \"key_0\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        }\n      }\n    },\n    \"depth\": 0,\n    \"execution_order\": 0,\n    \"evaluation_metric_ids\": [\n      1350,\n      5872\n    ],\n    \"fill_children\": false,\n    \"project_uuid\": \"string\",\n    \"organization_id\": \"string\",\n    \"children_logs\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n      }\n    ]\n  },\n  {\n    \"trace_id\": \"string\",\n    \"start_timestamp\": \"string\",\n    \"configuration\": {},\n    \"inputs\": {},\n    \"output\": \"string\",\n    \"target\": \"string\",\n    \"latency\": 0,\n    \"time_to_first_token\": 3144.597186248057,\n    \"input_tokens\": 0,\n    \"output_tokens\": 0,\n    \"total_tokens\": 0,\n    \"cost\": 0,\n    \"parent_trace_id\": \"string\",\n    \"root_trace_id\": \"string\",\n    \"project_name\": \"string\",\n    \"status\": \"string\",\n    \"error\": \"string\",\n    \"output_for_eval_metrics\": \"string\",\n    \"evaluation_metric_names\": [\n      \"string\",\n      \"string\"\n    ],\n    \"scores\": [\n      {\n        \"name\": \"<string>\",\n        \"score\": \"<number>\",\n        \"evaluation_metric_id\": \"<integer>\",\n        \"reason\": \"<string>\"\n      },\n      {\n        \"name\": \"<string>\",\n        \"score\": \"<number>\",\n        \"evaluation_metric_id\": \"<integer>\",\n        \"reason\": \"<string>\"\n      }\n    ],\n    \"feedback_score\": 5664.617675276429,\n    \"apply_eval_frac\": 1,\n    \"log_sample_rate\": 1,\n    \"deployment_id\": \"string\",\n    \"cache_hit\": false,\n    \"trace_name\": \"string\",\n    \"children\": [\n      \"string\",\n      \"string\"\n    ],\n    \"children_ids\": [\n      546,\n      3501\n    ],\n    \"end_timestamp\": \"string\",\n    \"end_user_identifier\": \"string\",\n    \"session_id\": \"string\",\n    \"metadata\": {},\n    \"tags\": [\n      \"string\",\n      \"string\"\n    ],\n    \"experiment_uuid\": \"string\",\n    \"images\": [\n      {\n        \"url\": \"<string>\",\n        \"caption\": \"<string>\"\n      },\n      {\n        \"url\": \"<string>\",\n        \"caption\": \"<string>\"\n      }\n    ],\n    \"comments\": [\n      {\n        \"trace_id\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"created_at\": \"<string>\",\n        \"user_email_address\": \"<string>\"\n      },\n      {\n        \"trace_id\": \"<string>\",\n        \"comment\": \"<string>\",\n        \"id\": \"<string>\",\n        \"user_id\": \"<string>\",\n        \"created_at\": \"<string>\",\n        \"user_email_address\": \"<string>\"\n      }\n    ],\n    \"annotations\": {\n      \"key_0\": {\n        \"key_0\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        },\n        \"key_1\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        }\n      },\n      \"key_1\": {\n        \"key_0\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        }\n      },\n      \"key_2\": {\n        \"key_0\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        },\n        \"key_1\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        },\n        \"key_2\": {\n          \"trace_id\": \"<string>\",\n          \"defined_annotation_id\": \"<integer>\",\n          \"created_at\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"score\": \"<number>\",\n          \"value\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_email_address\": \"<string>\",\n          \"annotation_name\": \"<string>\"\n        }\n      }\n    },\n    \"depth\": 0,\n    \"execution_order\": 0,\n    \"evaluation_metric_ids\": [\n      2811,\n      4597\n    ],\n    \"fill_children\": false,\n    \"project_uuid\": \"string\",\n    \"organization_id\": \"string\",\n    \"children_logs\": [\n      {\n        \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n      },\n      {\n        \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n      }\n    ]\n  }\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fb4a8375-2b55-495a-b3d2-59e0c2c125c1",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "experiment",
+                    ":experiment_uuid",
+                    "trace_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "experiment_uuid",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"filter_field\": \"<string>\",\n  \"filter_key\": \"<string>\",\n  \"filter_operator\": \"<string>\",\n  \"filter_value\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "70548208-6a5f-4b49-9133-538c336a716c",
+          "name": "Get Trace Logs Api",
+          "request": {
+            "name": "Get Trace Logs Api",
+            "description": {
+              "content": "Fetches trace logs and returns them as a paginated response.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "get_trace_logs"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"project_name\": \"<string>\",\n  \"page\": 1,\n  \"page_size\": 20,\n  \"filter_field\": \"<string>\",\n  \"filter_key\": \"<string>\",\n  \"filter_operator\": \"<string>\",\n  \"filter_value\": \"<string>\",\n  \"time_range\": \"na\",\n  \"status\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1af8431f-45ee-4762-b893-4ec315dc0898",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "get_trace_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"page\": 1,\n  \"page_size\": 20,\n  \"filter_field\": \"<string>\",\n  \"filter_key\": \"<string>\",\n  \"filter_operator\": \"<string>\",\n  \"filter_value\": \"<string>\",\n  \"time_range\": \"na\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"total\": 9949,\n  \"page\": 2274,\n  \"total_pages\": 6315,\n  \"page_size\": 1005,\n  \"results\": [\n    {\n      \"trace_id\": \"string\",\n      \"start_timestamp\": \"string\",\n      \"configuration\": {},\n      \"inputs\": {},\n      \"output\": \"string\",\n      \"target\": \"string\",\n      \"latency\": 0,\n      \"time_to_first_token\": 1239.018525871256,\n      \"input_tokens\": 0,\n      \"output_tokens\": 0,\n      \"total_tokens\": 0,\n      \"cost\": 0,\n      \"parent_trace_id\": \"string\",\n      \"root_trace_id\": \"string\",\n      \"project_name\": \"string\",\n      \"status\": \"string\",\n      \"error\": \"string\",\n      \"output_for_eval_metrics\": \"string\",\n      \"evaluation_metric_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"scores\": [\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        }\n      ],\n      \"feedback_score\": 5819.570984813557,\n      \"apply_eval_frac\": 1,\n      \"log_sample_rate\": 1,\n      \"deployment_id\": \"string\",\n      \"cache_hit\": false,\n      \"trace_name\": \"string\",\n      \"children\": [\n        \"string\",\n        \"string\"\n      ],\n      \"children_ids\": [\n        2153,\n        919\n      ],\n      \"end_timestamp\": \"string\",\n      \"end_user_identifier\": \"string\",\n      \"session_id\": \"string\",\n      \"metadata\": {},\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"experiment_uuid\": \"string\",\n      \"images\": [\n        {\n          \"url\": \"<string>\",\n          \"caption\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"caption\": \"<string>\"\n        }\n      ],\n      \"comments\": [\n        {\n          \"trace_id\": \"<string>\",\n          \"comment\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"created_at\": \"<string>\",\n          \"user_email_address\": \"<string>\"\n        },\n        {\n          \"trace_id\": \"<string>\",\n          \"comment\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"created_at\": \"<string>\",\n          \"user_email_address\": \"<string>\"\n        }\n      ],\n      \"annotations\": {\n        \"key_0\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_1\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_2\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_3\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        },\n        \"key_1\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        }\n      },\n      \"depth\": 0,\n      \"execution_order\": 0,\n      \"evaluation_metric_ids\": [\n        9471,\n        223\n      ],\n      \"fill_children\": false,\n      \"project_uuid\": \"string\",\n      \"organization_id\": \"string\",\n      \"children_logs\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n        }\n      ]\n    },\n    {\n      \"trace_id\": \"string\",\n      \"start_timestamp\": \"string\",\n      \"configuration\": {},\n      \"inputs\": {},\n      \"output\": \"string\",\n      \"target\": \"string\",\n      \"latency\": 0,\n      \"time_to_first_token\": 7448.182915241774,\n      \"input_tokens\": 0,\n      \"output_tokens\": 0,\n      \"total_tokens\": 0,\n      \"cost\": 0,\n      \"parent_trace_id\": \"string\",\n      \"root_trace_id\": \"string\",\n      \"project_name\": \"string\",\n      \"status\": \"string\",\n      \"error\": \"string\",\n      \"output_for_eval_metrics\": \"string\",\n      \"evaluation_metric_names\": [\n        \"string\",\n        \"string\"\n      ],\n      \"scores\": [\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        },\n        {\n          \"name\": \"<string>\",\n          \"score\": \"<number>\",\n          \"evaluation_metric_id\": \"<integer>\",\n          \"reason\": \"<string>\"\n        }\n      ],\n      \"feedback_score\": 7351.28979201151,\n      \"apply_eval_frac\": 1,\n      \"log_sample_rate\": 1,\n      \"deployment_id\": \"string\",\n      \"cache_hit\": false,\n      \"trace_name\": \"string\",\n      \"children\": [\n        \"string\",\n        \"string\"\n      ],\n      \"children_ids\": [\n        1637,\n        3969\n      ],\n      \"end_timestamp\": \"string\",\n      \"end_user_identifier\": \"string\",\n      \"session_id\": \"string\",\n      \"metadata\": {},\n      \"tags\": [\n        \"string\",\n        \"string\"\n      ],\n      \"experiment_uuid\": \"string\",\n      \"images\": [\n        {\n          \"url\": \"<string>\",\n          \"caption\": \"<string>\"\n        },\n        {\n          \"url\": \"<string>\",\n          \"caption\": \"<string>\"\n        }\n      ],\n      \"comments\": [\n        {\n          \"trace_id\": \"<string>\",\n          \"comment\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"created_at\": \"<string>\",\n          \"user_email_address\": \"<string>\"\n        },\n        {\n          \"trace_id\": \"<string>\",\n          \"comment\": \"<string>\",\n          \"id\": \"<string>\",\n          \"user_id\": \"<string>\",\n          \"created_at\": \"<string>\",\n          \"user_email_address\": \"<string>\"\n        }\n      ],\n      \"annotations\": {\n        \"key_0\": {\n          \"key_0\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_1\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          },\n          \"key_2\": {\n            \"trace_id\": \"<string>\",\n            \"defined_annotation_id\": \"<integer>\",\n            \"created_at\": \"<string>\",\n            \"user_id\": \"<string>\",\n            \"score\": \"<number>\",\n            \"value\": \"<string>\",\n            \"id\": \"<string>\",\n            \"user_email_address\": \"<string>\",\n            \"annotation_name\": \"<string>\"\n          }\n        }\n      },\n      \"depth\": 0,\n      \"execution_order\": 0,\n      \"evaluation_metric_ids\": [\n        1799,\n        1757\n      ],\n      \"fill_children\": false,\n      \"project_uuid\": \"string\",\n      \"organization_id\": \"string\",\n      \"children_logs\": [\n        {\n          \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n        },\n        {\n          \"value\": \"<Circular reference to #/components/schemas/TraceLogTreeSchema detected>\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "ce36f409-36e4-4c51-b027-f548f5a0d516",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "get_trace_logs"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"project_name\": \"<string>\",\n  \"page\": 1,\n  \"page_size\": 20,\n  \"filter_field\": \"<string>\",\n  \"filter_key\": \"<string>\",\n  \"filter_operator\": \"<string>\",\n  \"filter_value\": \"<string>\",\n  \"time_range\": \"na\",\n  \"status\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "ef3f74ee-edce-4b99-82fe-fa90990e677f",
+          "name": "Update Test Case",
+          "request": {
+            "name": "Update Test Case",
+            "description": {
+              "content": "Update the item/test case of the dataset with any given fields.\n\nArgs:\n    dataset_id (int): ID of the dataset.\n    test_case_id (int): ID of the item/test case.\n    update_test_case_request (UpdateTestCasePublicRequestSchema): Request body containing the fields to update.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "parea",
+                "v1",
+                "update_test_case",
+                ":dataset_id",
+                ":test_case_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "dataset_id",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<integer>",
+                  "key": "test_case_id",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": {
+              "type": "apikey",
+              "apikey": [
+                {
+                  "key": "key",
+                  "value": "x-api-key"
+                },
+                {
+                  "key": "value",
+                  "value": "{{apiKey}}"
+                },
+                {
+                  "key": "in",
+                  "value": "header"
+                }
+              ]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"inputs\": \"<object>\",\n  \"target\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "14925b24-2f48-4f79-b0d8-bbdeef57e8d7",
+              "name": "Successful Response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "update_test_case",
+                    ":dataset_id",
+                    ":test_case_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "dataset_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "test_case_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inputs\": \"<object>\",\n  \"target\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "07a4c58f-30ca-4a69-a2f5-2a9d8ee26a60",
+              "name": "Validation Error",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "parea",
+                    "v1",
+                    "update_test_case",
+                    ":dataset_id",
+                    ":test_case_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "dataset_id",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<integer>",
+                      "key": "test_case_id",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: apikey",
+                      "type": "text/plain"
+                    },
+                    "key": "x-api-key",
+                    "value": "<API Key>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"inputs\": \"<object>\",\n  \"target\": \"<string>\",\n  \"tags\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+              "code": 422,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"detail\": [\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    },\n    {\n      \"loc\": [\n        \"string\",\n        \"string\"\n      ],\n      \"msg\": \"string\",\n      \"type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "apikey",
+    "apikey": [
+      {
+        "key": "key",
+        "value": "x-api-key"
+      },
+      {
+        "key": "value",
+        "value": "{{apiKey}}"
+      },
+      {
+        "key": "in",
+        "value": "header"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "32790166-1c58-4843-9c7a-95295ec7ff99",
+    "name": "AI REST Parea API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Parea AI REST API provides programmatic access to the Parea platform, including trace logging for LLM calls, experiment creation and management, dataset operations, LLM proxy completions, and project management. Authentication is performed via the x-api-key header.\n\nContact Support:\n Email: support@parea.ai",
+      "type": "text/plain"
+    }
+  }
+}

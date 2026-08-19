@@ -1,0 +1,477 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "AI REST Parea API",
+    "version": "1.0.0"
+  },
+  "request": {
+    "auth": {
+      "type": "apikey",
+      "key": "x-api-key",
+      "value": "{{x-api-key}}",
+      "placement": "header"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Parea",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Health Check",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/",
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Health Check"
+        },
+        {
+          "info": {
+            "name": "Completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/completion",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a completion response using either one of your organizationâ€™s deployed prompts, or by providing completion details including prompt and inputs in the request.\nThis endpoint acts as a LLM gateway/proxy endpoint to generate completions from different LLMs."
+        },
+        {
+          "info": {
+            "name": "Stream Completion",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/completion/stream",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Get a completion response using either one of your organizationâ€™s deployed prompts, or by providing completion details including prompt and inputs in the request.\n\nThis endpoint acts as a LLM gateway/proxy endpoint to generate completions from different LLMs."
+        },
+        {
+          "info": {
+            "name": "Fetch Deployed Prompt",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/deployed-prompt",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Given a deployment_id, fetches the deployed prompt and its details. Can be optionally used to fill-in the templated prompt with provided inputs."
+        },
+        {
+          "info": {
+            "name": "Record Feedback",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/feedback",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Record any (user) feedback & ground truth/correction of output for a log."
+        },
+        {
+          "info": {
+            "name": "Record Trace Log",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/trace_log",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Log a (LLM) span to visualize inference results, or chains."
+        },
+        {
+          "info": {
+            "name": "Update Trace Log",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/trace_log",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update fields of a trace log."
+        },
+        {
+          "info": {
+            "name": "Record Langchain Trace Log",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/trace_log/langchain",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Record Langchain Trace Log"
+        },
+        {
+          "info": {
+            "name": "Create Experiment Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/experiment",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create an experiment and get the associated experiment uuid."
+        },
+        {
+          "info": {
+            "name": "Get Experiment Stats Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/experiment/:experiment_uuid/stats",
+            "params": [
+              {
+                "name": "experiment_uuid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetches aggregated stats for every root-level trace log in an experiment."
+        },
+        {
+          "info": {
+            "name": "Finish Experiment Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/experiment/:experiment_uuid/finished",
+            "params": [
+              {
+                "name": "experiment_uuid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Finishes an experiment, calculates stats and returns all stats for root trace logs"
+        },
+        {
+          "info": {
+            "name": "Create Or Get Project Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/project",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Create a project or get the project if it already exists. Is used to find out UUID of project."
+        },
+        {
+          "info": {
+            "name": "Get Test Case Collection By Identifier",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/collection/:test_collection_identifier",
+            "params": [
+              {
+                "name": "test_collection_identifier",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetches dataset/test case collection by its ID or name.\n\nArgs:\n    test_collection_identifier (Union[str, int]): ID or name of the test case collection/dataset."
+        },
+        {
+          "info": {
+            "name": "Create Collection",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/collection",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Creates a dataset"
+        },
+        {
+          "info": {
+            "name": "Create Test Cases For Dataset",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/testcases",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Adds items/test cases to a dataset. If the dataset does not exist, it will be created.\nReturns the IDs of the created items/test cases.\n\nReturns:\n    List[int]: List of IDs of the created items/test cases."
+        },
+        {
+          "info": {
+            "name": "Get Trace Log Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/trace_log/:trace_id",
+            "params": [
+              {
+                "name": "trace_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetches a trace log by its UUID."
+        },
+        {
+          "info": {
+            "name": "List Experiments Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/experiments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Lists experiments given a set of filters incl. their high-level statistics."
+        },
+        {
+          "info": {
+            "name": "Get Experiment Trace Logs Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/experiment/:experiment_uuid/trace_logs",
+            "params": [
+              {
+                "name": "experiment_uuid",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetches all trace logs for an experiment.\n\nArgs:\n    experiment_uuid (str): UUID of the experiment.\n\nReturns:\n    list[TraceLogTreeSchema]: List of trace logs for the experiment."
+        },
+        {
+          "info": {
+            "name": "Get Trace Logs Api",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/get_trace_logs",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Fetches trace logs and returns them as a paginated response."
+        },
+        {
+          "info": {
+            "name": "Update Test Case",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://parea-ai-backend-us-9ac16cdbc7a7b006.onporter.run/api/parea/v1/update_test_case/:dataset_id/:test_case_id",
+            "params": [
+              {
+                "name": "dataset_id",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "test_case_id",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            },
+            "auth": {
+              "type": "apikey",
+              "key": "x-api-key",
+              "value": "{{x-api-key}}",
+              "placement": "header"
+            }
+          },
+          "docs": "Update the item/test case of the dataset with any given fields.\n\nArgs:\n    dataset_id (int): ID of the dataset.\n    test_case_id (int): ID of the item/test case.\n    update_test_case_request (UpdateTestCasePublicRequestSchema): Request body containing the fields to update."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
