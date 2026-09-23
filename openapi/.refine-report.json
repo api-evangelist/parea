@@ -1,7 +1,7 @@
 {
   "provider": "parea",
   "sources": [
-    "parea-parea-api-openapi.yml"
+    "_original/parea-rest-api-openapi.yml"
   ],
   "outputs": [
     "parea-parea-api-openapi.yml"
@@ -9,6 +9,33 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "parea-rest-api-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "parea-rest-api-openapi.yml: tagged paths GET /api/parea/v1/ -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/completion -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/completion/stream -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/deployed-prompt -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/feedback -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths PUT /api/parea/v1/trace_log -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/trace_log -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/trace_log/langchain -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/experiment -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths GET /api/parea/v1/experiment/{experiment_uuid}/stats -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/experiment/{experiment_uuid}/finished -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/project -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths GET /api/parea/v1/collection/{test_collection_identifier} -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/collection -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/testcases -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths GET /api/parea/v1/trace_log/{trace_id} -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/experiments -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/experiment/{experiment_uuid}/trace_logs -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/get_trace_logs -> Parea",
+    "parea-rest-api-openapi.yml: tagged paths POST /api/parea/v1/update_test_case/{dataset_id}/{test_case_id} -> Parea",
+    "parea-rest-api-openapi.yml: declared missing tag: Parea",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "parea-parea-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
