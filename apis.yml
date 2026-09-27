@@ -49,7 +49,7 @@ tags:
   - Testing
   - Prompt Management
   - AI Engineering
-  - Machine-Learning
+  - Machine Learning
   - Tracing
   - Experimentation
   - Human Feedback
@@ -64,6 +64,7 @@ tags_raw:
   - Tracing
   - Experimentation
   - Human Feedback
+  - Machine-Learning
 apis:
 - aid: parea:parea-parea-api
   name: Parea AI Parea API

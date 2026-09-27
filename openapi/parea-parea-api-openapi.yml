@@ -680,168 +680,44 @@ paths:
       - Parea
 components:
   schemas:
-    InputsSchema-Input:
+    TraceLogCommentSchema:
       properties:
-        model:
-          title: Model
-          description: Model name
-          type:
-          - string
-          - 'null'
-        provider:
-          title: Provider
-          description: Provider name
-          type:
-          - string
-          - 'null'
-        model_params:
-          description: Parameters such as temperature.
-          $ref: '#/components/schemas/ParamsSchema'
-        messages:
-          title: Messages
-          description: Messages to LLM
-          items:
-            $ref: '#/components/schemas/MessageSchema'
-          type:
-          - array
-          - 'null'
-        functions:
-          title: Functions
-          description: A list of functions the model may generate JSON inputs for. Assumes every item in list has key 'name', 'description' and 'parameters'
-          items: {}
-          type:
-          - array
-          - 'null'
-        function_call:
+        trace_id:
+          type: string
+          title: Trace Id
+          description: Trace ID
+        comment:
+          type: string
+          title: Comment
+          description: Comment
+        id:
           anyOf:
           - type: string
-          - type: object
-          title: Function Call
-          description: "Controls how the model responds to function calls. â€œautoâ€\x9D means the model can pick between an end-user or calling a function. To specifying a particular function name use a dictionary with key=â€œnameâ€\x9D and value=â€œmy_functionâ€\x9D. This will force the model to call that function."
-      type: object
-      title: InputsSchema
-      description: Inputs for LLM inference such as messages, functions and additional parameters.
-    StatisticOperation:
-      type: string
-      enum:
-      - mean
-      - median
-      - variance
-      - standard_deviation
-      - min
-      - max
-      - mse
-      - mae
-      - correlation
-      - spearman_correlation
-      - accuracy
-      - custom
-      title: StatisticOperation
-    CreateExperimentRequestSchema:
-      properties:
-        name:
+          - type: integer
+          title: Id
+          description: Comment ID
+        user_id:
           type: string
-          title: Name
-          description: Name of the experiment
-        run_name:
-          title: Run Name
-          description: Name of the run. Must be unique for each experiment and can only contain alphanumeric characters, hyphens, and underscores.
+          title: User Id
+          description: User ID
+        user_email_address:
+          title: User Email Address
+          description: User email address
           type:
           - string
           - 'null'
-        project_uuid:
+        created_at:
           type: string
-          title: Project Uuid
-          description: UUID of the project associated with this experiment
-        is_public:
-          type: boolean
-          title: Is Public
-          description: If experiment should be public
-          default: false
-        metadata:
-          title: Metadata
-          description: Any additional key-value pairs which provide context or are useful for filtering.
-          additionalProperties:
-            type: string
-          type:
-          - object
-          - 'null'
+          title: Created At
+          description: Comment creation timestamp
       type: object
       required:
-      - name
-      - project_uuid
-      title: CreateExperimentRequestSchema
-      examples:
-      - metadata:
-          dataset: dev 123
-        name: Test Experiment
-        project_uuid: '...'
-        run_name: test-experiment
-    ModelParamsSchema:
-      properties:
-        model:
-          title: Model
-          description: Model name
-          default: ''
-          type:
-          - string
-          - 'null'
-        temp:
-          title: Temp
-          description: Temperature
-          default: 1.0
-          type:
-          - number
-          - 'null'
-          maximum: 1.0
-          minimum: 0.0
-        top_p:
-          title: Top P
-          description: Top p
-          default: 1.0
-          type:
-          - number
-          - 'null'
-          maximum: 1.0
-          minimum: 0.0
-        frequency_penalty:
-          title: Frequency Penalty
-          description: Frequency penalty
-          default: 0.0
-          type:
-          - number
-          - 'null'
-          maximum: 2.0
-          minimum: -2.0
-        presence_penalty:
-          title: Presence Penalty
-          description: Presence penalty
-          default: 0.0
-          type:
-          - number
-          - 'null'
-          maximum: 2.0
-          minimum: -2.0
-        max_length:
-          title: Max Length
-          description: Max length of the output
-          type:
-          - integer
-          - 'null'
-        response_format:
-          title: Response Format
-          description: Response format
-          type:
-          - object
-          - 'null'
-        safe_prompt:
-          title: Safe Prompt
-          description: Safe prompt. Only used for Mistral
-          type:
-          - boolean
-          - 'null'
-      type: object
-      title: ModelParamsSchema
+      - trace_id
+      - comment
+      - id
+      - user_id
+      - created_at
+      title: TraceLogCommentSchema
     ParamsSchema:
       properties:
         model:
@@ -897,139 +773,6 @@ components:
       description: 'Additional parameters to run inference of LLMs, such as temperature, top_p, etc.
 
         Following the OpenAI API format.'
-    UpdateLogSchema:
-      properties:
-        trace_id:
-          type: string
-          title: Trace Id
-          description: UUID of the trace log which should be updated
-        field_name_to_value_map:
-          type: object
-          title: Field Name To Value Map
-          description: Key-value pairs how each given field (`key`) of the trace log should be updated with `value`. For field names, see `TraceLogSchema`.
-        root_trace_id:
-          title: Root Trace Id
-          description: UUID of root trace
-          type:
-          - string
-          - 'null'
-      type: object
-      required:
-      - trace_id
-      - field_name_to_value_map
-      title: UpdateLogSchema
-      examples:
-      - field_name_to_value_map:
-          error: Some error message
-          status: error
-        trace_id: sasdc-csd-rnFesaeCpqcXJ_yL3wi
-    ExperimentSchema:
-      properties:
-        name:
-          type: string
-          title: Name
-          description: Name of the experiment
-        run_name:
-          title: Run Name
-          description: Name of the run. Must be unique for each experiment and can only contain alphanumeric characters, hyphens, and underscores.
-          type:
-          - string
-          - 'null'
-        project_uuid:
-          type: string
-          title: Project Uuid
-          description: UUID of the project associated with this experiment
-        is_public:
-          type: boolean
-          title: Is Public
-          description: If experiment should be public
-          default: false
-        metadata:
-          title: Metadata
-          description: Any additional key-value pairs which provide context or are useful for filtering.
-          additionalProperties:
-            type: string
-          type:
-          - object
-          - 'null'
-        uuid:
-          type: string
-          title: Uuid
-          description: UUID of the created experiment
-        created_at:
-          type: string
-          title: Created At
-          description: Timestamp the experiment was created
-      type: object
-      required:
-      - name
-      - project_uuid
-      - uuid
-      - created_at
-      title: ExperimentSchema
-      examples:
-      - created_at: '2024-05-30 13:48:34'
-        metadata:
-          dataset: dev 123
-        name: Test Experiment
-        project_uuid: '...'
-        run_name: test-experiment
-        uuid: '...'
-    TraceLogAnnotationSchema:
-      properties:
-        trace_id:
-          type: string
-          title: Trace Id
-          description: UUID of associated trace
-        defined_annotation_id:
-          type: integer
-          title: Defined Annotation Id
-          description: Annotation criterion ID
-        score:
-          title: Score
-          description: Annotation score
-          type:
-          - number
-          - 'null'
-        value:
-          title: Value
-          description: Annotation value
-          type:
-          - string
-          - 'null'
-        id:
-          anyOf:
-          - type: string
-          - type: integer
-          title: Id
-          description: Annotation ID
-        created_at:
-          type: string
-          title: Created At
-          description: Annotation creation timestamp
-        user_id:
-          type: string
-          title: User Id
-          description: Parea user ID
-        user_email_address:
-          title: User Email Address
-          description: User email address
-          type:
-          - string
-          - 'null'
-        annotation_name:
-          title: Annotation Name
-          description: Annotation name
-          type:
-          - string
-          - 'null'
-      type: object
-      required:
-      - trace_id
-      - defined_annotation_id
-      - created_at
-      - user_id
-      title: TraceLogAnnotationSchema
     TraceStatsSchema:
       properties:
         trace_id:
@@ -1093,6 +836,538 @@ components:
           score: 0.5
         total_tokens: 300
         trace_id: sasdc-csd-rnFesaeCpqcXJ_yL3wi
+    GetTestCaseCollectionResponseSchema:
+      properties:
+        id:
+          type: integer
+          title: Id
+          description: Unique identifier for the test case collection
+        name:
+          type: string
+          title: Name
+          description: Name of the test case collection
+        column_names:
+          items:
+            type: string
+          type: array
+          title: Column Names
+          description: Column names for the test case collection
+        created_at:
+          type: string
+          title: Created At
+          description: Timestamp when the test case collection was created
+        last_updated_at:
+          type: string
+          title: Last Updated At
+          description: Timestamp when the test case collection was last updated
+        test_cases:
+          additionalProperties:
+            $ref: '#/components/schemas/GetTestCaseResponseSchema'
+          type: object
+          title: Test Cases
+          description: Dictionary mapping test case ID to test case
+      type: object
+      required:
+      - id
+      - name
+      - column_names
+      - created_at
+      - last_updated_at
+      - test_cases
+      title: GetTestCaseCollectionResponseSchema
+      examples:
+      - column_names:
+        - language
+        - framework
+        created_at: '2021-06-01T00:00:00Z'
+        id: 5000
+        last_updated_at: '2021-06-01T00:00:00Z'
+        name: Hello World Programs
+        test_cases:
+          '12345':
+            id: 12345
+            inputs:
+              framework: fastapi
+              language: python
+            tags:
+            - easy
+            target: a good program here
+            test_case_collection_id: 5000
+    CompletionsSchema:
+      properties:
+        llm_inputs:
+          title: Llm Inputs
+          description: Key-value pairs as inputs to prompt template. Only needs to be provided if `deployment_id` is provided or `llm_configuration.messages` are templated.
+          type:
+          - object
+          - 'null'
+        llm_configuration:
+          allOf:
+          - $ref: '#/components/schemas/LLMInputsSchema'
+          description: LLM configuration parameters such as messages, functions, etc.
+          default: {}
+        project_name:
+          title: Project Name
+          description: Project name which is used to associate the log with a project.
+          default: default
+          type:
+          - string
+          - 'null'
+        project_uuid:
+          title: Project Uuid
+          description: Project UUID which is used to associate the log with a project. Does not need to be provided if the `project_name` is provided.
+          type:
+          - string
+          - 'null'
+        experiment_uuid:
+          title: Experiment Uuid
+          description: Experiment UUID which is used to associate the log with an experiment.
+          type:
+          - string
+          - 'null'
+        parent_trace_id:
+          title: Parent Trace Id
+          description: UUID of the parent log. If given, will be used to associate the generation in a chain & create hierarchical nested logs.
+          type:
+          - string
+          - 'null'
+        root_trace_id:
+          title: Root Trace Id
+          description: UUID of the root log. If given, will be used to associate the generation in a chain & create hierarchical nested logs.
+          type:
+          - string
+          - 'null'
+        end_user_identifier:
+          title: End User Identifier
+          description: Special field to track the end user which is interacting with your LLM app.
+          type:
+          - string
+          - 'null'
+        deployment_id:
+          title: Deployment Id
+          description: This is the ID for a specific deployed prompt. You can find your deployed prompts on the Deployments tab. If a deployment_id is provided, Parea will fetch all of the associated configuration including model name, model parameters, and any associated functions. Any information provided on the llm_configuration field will be used instead of the associated deployed prompts fields.
+          type:
+          - string
+          - 'null'
+        eval_metric_ids:
+          title: Eval Metric Ids
+          description: List of evaluation metric IDs deployed on Parea which should be used to evaluate the completion output.
+          items:
+            type: integer
+          type:
+          - array
+          - 'null'
+        metadata:
+          title: Metadata
+          description: Key-value pairs to be associated with the log.
+          type:
+          - object
+          - 'null'
+        tags:
+          title: Tags
+          description: List of tags to be associated with the log.
+          items:
+            type: string
+          type:
+          - array
+          - 'null'
+        target:
+          title: Target
+          description: Optional ground truth output for the inputs. Will be used for evaluation and can be used when creating a test case from the log.
+          type:
+          - string
+          - 'null'
+        trace_id:
+          title: Trace Id
+          description: UUID of the generation log. If not given, will be auto-generated.
+          type:
+          - string
+          - 'null'
+        trace_name:
+          title: Trace Name
+          description: Name of the generation log. If not given, will be auto-generated in the format `llm-{provider}`.
+          type:
+          - string
+          - 'null'
+        provider_api_key:
+          title: Provider Api Key
+          description: Provider API key to generate response. If not given, API keys saved on the platform will be used
+          type:
+          - string
+          - 'null'
+        cache:
+          type: boolean
+          title: Cache
+          description: If true, the completion will be cached to avoid latency & cost for any subsequent completion using the same inputs.
+          default: true
+        log_omit_inputs:
+          type: boolean
+          title: Log Omit Inputs
+          description: If true, the inputs, llm_configuration.messages, llm_configuration.functions, llm_configuration.model_params will not be logged.
+          default: false
+        log_omit_outputs:
+          type: boolean
+          title: Log Omit Outputs
+          description: If true, the generated response will not be logged.
+          default: false
+        log_omit:
+          type: boolean
+          title: Log Omit
+          description: Equivalent to setting both log_omit_inputs and log_omit_outputs to true.
+          default: false
+        log_sample_rate:
+          title: Log Sample Rate
+          description: If specified, this log and its entire associated trace will logged with this probability. Must be between 0 and 1 (incl.). Defaults to 1.0 (i.e., keeping all logs)
+          default: 1.0
+          type:
+          - number
+          - 'null'
+          maximum: 1.0
+          minimum: 0.0
+        inference_id:
+          title: Inference Id
+          description: Deprecated field which is the same `trace_id`
+          type:
+          - string
+          - 'null'
+        name:
+          title: Name
+          description: Deprecated field
+          type:
+          - string
+          - 'null'
+        retry:
+          type: boolean
+          title: Retry
+          description: Deprecated field
+          default: false
+        fallback_strategy:
+          title: Fallback Strategy
+          description: Deprecated field
+          items:
+            type: string
+          type:
+          - array
+          - 'null'
+        stream:
+          type: boolean
+          title: Stream
+          description: Deprecated field. Use /completion/stream instead.
+          default: false
+      type: object
+      title: CompletionsSchema
+      examples:
+      - end_user_identifier: 2596@gmail.com
+        inputs:
+          city: New York
+        llm_configuration:
+          function_call: auto
+          functions:
+          - description: Get the current weather in a given location.
+            name: get_current_weather
+            parameters:
+              properties:
+                location:
+                  description: The city and state, e.g. San Francisco, CA
+                  type: string
+                unit:
+                  enum:
+                  - celsius
+                  - fahrenheit
+                  type: string
+              required:
+              - location
+              type: object
+          messages:
+          - content: What is the weather in New York
+            role: user
+          model: gpt-4o-mini
+          model_params:
+            max_length: 500
+            model: gpt-4o-mini
+            temp: 0.0
+          provider: openai
+        metadata:
+          purpose: testing
+          user_id: user_2Q9afRAKe6SZrc3U7
+        tags:
+        - weather
+        - forecast
+      - deployment_id: p-qZrnFesaeCpqcXJ_yL3wi
+        llm_inputs:
+          x: Golang
+          y: Fiber
+        metadata:
+          purpose: testing
+    PaginatedResponse_TraceLogTreeSchema_:
+      properties:
+        total:
+          type: integer
+          title: Total
+        page:
+          type: integer
+          title: Page
+        total_pages:
+          type: integer
+          title: Total Pages
+        page_size:
+          type: integer
+          title: Page Size
+        results:
+          items:
+            $ref: '#/components/schemas/TraceLogTreeSchema'
+          type: array
+          title: Results
+      type: object
+      required:
+      - total
+      - page
+      - total_pages
+      - page_size
+      - results
+      title: PaginatedResponse[TraceLogTreeSchema]
+    StatisticOperation:
+      type: string
+      enum:
+      - mean
+      - median
+      - variance
+      - standard_deviation
+      - min
+      - max
+      - mse
+      - mae
+      - correlation
+      - spearman_correlation
+      - accuracy
+      - custom
+      title: StatisticOperation
+    FilterOperator:
+      type: string
+      enum:
+      - equals
+      - not_equals
+      - like
+      - greater_than_or_equal
+      - less_than_or_equal
+      - greater_than
+      - less_than
+      - is_null
+      - exists
+      - in
+      - between
+      title: FilterOperator
+    QueryParamsPaginationPublic:
+      properties:
+        page:
+          type: integer
+          title: Page
+          description: Page number starting from 1
+          default: 1
+          exclusiveMinimum: 0.0
+        page_size:
+          type: integer
+          maximum: 100000.0
+          title: Page Size
+          description: Number of items per page
+          default: 20
+          exclusiveMinimum: 0.0
+        filter_field:
+          title: Filter Field
+          description: 'Field to filter on.
+
+            If you want to filter by a score, you need to follow this format: ''score:{score_name}''.
+
+            If you want to filter by annotation, you need to follow this format: ''annotation:{annotation_type}:{annotation_id}''.'
+          type:
+          - string
+          - 'null'
+        filter_key:
+          title: Filter Key
+          description: Filter by key when filtering on a map
+          type:
+          - string
+          - 'null'
+        filter_operator:
+          description: Filter operator
+          $ref: '#/components/schemas/FilterOperator'
+        filter_value:
+          title: Filter Value
+          description: Filter value
+          type:
+          - string
+          - 'null'
+        project_name:
+          type: string
+          title: Project Name
+          description: Filter by project name
+        time_range:
+          allOf:
+          - $ref: '#/components/schemas/TimeRange'
+          description: 'Time range for the logs: 1h,3h,6h,24h, 7d, 1m, 3m, 1y or na'
+          default: na
+        status:
+          title: Status
+          description: 'Filter by status: success, error'
+          type:
+          - string
+          - 'null'
+      type: object
+      required:
+      - project_name
+      title: QueryParamsPaginationPublic
+      examples:
+      - filter_field: trace_name
+        filter_operator: like
+        filter_value: llm
+    UpdateTestCasePublicRequestSchema:
+      properties:
+        inputs:
+          title: Inputs
+          description: Key-value pairs for the inputs of that item
+          type:
+          - object
+          - 'null'
+        target:
+          title: Target
+          description: Target/ground truth value for the item
+          type:
+          - string
+          - 'null'
+        tags:
+          title: Tags
+          description: Tags for the item
+          items:
+            type: string
+          type:
+          - array
+          - 'null'
+      type: object
+      title: UpdateTestCasePublicRequestSchema
+      description: Any set field will be used to update the item in the dataset.
+      examples:
+      - inputs:
+          framework: gin
+          language: golang
+    ExperimentStatsSchema:
+      properties:
+        parent_trace_stats:
+          items:
+            $ref: '#/components/schemas/TraceStatsSchema'
+          type: array
+          title: Parent Trace Stats
+          description: Stats of root-level trace logs of an experiment
+      type: object
+      required:
+      - parent_trace_stats
+      title: ExperimentStatsSchema
+      description: Contains aggregated stats of all root trace logs of an experiment.
+      examples:
+      - parent_trace_stats:
+        - cost: 0.5
+          input_tokens: 100
+          latency: 0.5
+          output_tokens: 200
+          scores:
+          - name: accuracy
+            score: 0.5
+          total_tokens: 300
+          trace_id: sasdc-csd-rnFesaeCpqcXJ_yL3wi
+    TraceLogAnnotationSchema:
+      properties:
+        trace_id:
+          type: string
+          title: Trace Id
+          description: UUID of associated trace
+        defined_annotation_id:
+          type: integer
+          title: Defined Annotation Id
+          description: Annotation criterion ID
+        score:
+          title: Score
+          description: Annotation score
+          type:
+          - number
+          - 'null'
+        value:
+          title: Value
+          description: Annotation value
+          type:
+          - string
+          - 'null'
+        id:
+          anyOf:
+          - type: string
+          - type: integer
+          title: Id
+          description: Annotation ID
+        created_at:
+          type: string
+          title: Created At
+          description: Annotation creation timestamp
+        user_id:
+          type: string
+          title: User Id
+          description: Parea user ID
+        user_email_address:
+          title: User Email Address
+          description: User email address
+          type:
+          - string
+          - 'null'
+        annotation_name:
+          title: Annotation Name
+          description: Annotation name
+          type:
+          - string
+          - 'null'
+      type: object
+      required:
+      - trace_id
+      - defined_annotation_id
+      - created_at
+      - user_id
+      title: TraceLogAnnotationSchema
+    CreateExperimentRequestSchema:
+      properties:
+        name:
+          type: string
+          title: Name
+          description: Name of the experiment
+        run_name:
+          title: Run Name
+          description: Name of the run. Must be unique for each experiment and can only contain alphanumeric characters, hyphens, and underscores.
+          type:
+          - string
+          - 'null'
+        project_uuid:
+          type: string
+          title: Project Uuid
+          description: UUID of the project associated with this experiment
+        is_public:
+          type: boolean
+          title: Is Public
+          description: If experiment should be public
+          default: false
+        metadata:
+          title: Metadata
+          description: Any additional key-value pairs which provide context or are useful for filtering.
+          additionalProperties:
+            type: string
+          type:
+          - object
+          - 'null'
+      type: object
+      required:
+      - name
+      - project_uuid
+      title: CreateExperimentRequestSchema
+      examples:
+      - metadata:
+          dataset: dev 123
+        name: Test Experiment
+        project_uuid: '...'
+        run_name: test-experiment
     CreateTestCasesSchema:
       properties:
         id:
@@ -1134,63 +1409,348 @@ components:
           tags:
           - easy
           target: a good program here
-    ListExperimentsRequestSchema:
+    ValidationError:
       properties:
-        project_name:
-          title: Project Name
-          description: Name of the project to filter experiments by.
-          type:
-          - string
-          - 'null'
-        metadata_filter:
-          title: Metadata Filter
-          description: Filters experiments to contain the given metadata. The metadata_filter is a dictionary where the keys are the metadata keys and the values are the metadata values to filter by.
+        loc:
+          items:
+            anyOf:
+            - type: string
+            - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+      - loc
+      - msg
+      - type
+      title: ValidationError
+    PromptSchema:
+      properties:
+        raw_messages:
+          items:
+            type: object
+          type: array
+          title: Raw Messages
+          description: List of templated messages as they were created in the UI.
+        messages:
+          items:
+            type: object
+          type: array
+          title: Messages
+          description: If `inputs` were given in request, these messages will be the filled-in version of `raw_messages`. Otherwise, they will be the same as `raw_messages`.
+        inputs:
+          title: Inputs
+          description: If you would like to fill in your prompt template with inputs you can provided then as a dictionary. The keys should match the names of the deployed prompt templateâ€™s variables.
           type:
           - object
           - 'null'
-        experiment_name_filter:
-          title: Experiment Name Filter
-          description: Filters experiments to contain the given string in their name.
+      type: object
+      required:
+      - raw_messages
+      - messages
+      title: PromptSchema
+    ExperimentWithStatsSchema:
+      properties:
+        name:
+          type: string
+          title: Name
+          description: Name of the experiment
+        run_name:
+          title: Run Name
+          description: Name of the run. Must be unique for each experiment and can only contain alphanumeric characters, hyphens, and underscores.
           type:
           - string
           - 'null'
-        run_name_filter:
-          title: Run Name Filter
-          description: Filters experiments to contain the given string in their run name.
+        project_uuid:
+          type: string
+          title: Project Uuid
+          description: UUID of the project associated with this experiment
+        is_public:
+          type: boolean
+          title: Is Public
+          description: If experiment should be public
+          default: false
+        metadata:
+          title: Metadata
+          description: Any additional key-value pairs which provide context or are useful for filtering.
+          additionalProperties:
+            type: string
+          type:
+          - object
+          - 'null'
+        uuid:
+          type: string
+          title: Uuid
+          description: UUID of the created experiment
+        created_at:
+          type: string
+          title: Created At
+          description: Timestamp the experiment was created
+        status:
+          allOf:
+          - $ref: '#/components/schemas/ExperimentStatus'
+          description: Status of the experiment
+        pinned_stats:
+          items:
+            $ref: '#/components/schemas/ExperimentPinnedStatistic'
+          type: array
+          title: Pinned Stats
+          description: List of population/dataset-level statistics. Typically contains mean of any reported scores, latencies, etc.
+        num_samples:
+          title: Num Samples
+          description: Number of samples in the experiment
+          type:
+          - integer
+          - 'null'
+      type: object
+      required:
+      - name
+      - project_uuid
+      - uuid
+      - created_at
+      - status
+      - pinned_stats
+      title: ExperimentWithStatsSchema
+      examples:
+      - created_at: '2024-04-15 22:19:13'
+        is_public: false
+        metadata:
+          dataset: dev 123
+        name: greeting
+        num_samples: 6
+        pinned_stats:
+        - operation: mean
+          value: 0.176471
+          var1: levenshtein
+        - operation: mean
+          value: 2.0e-05
+          var1: Cost
+        - operation: mean
+          value: 11
+          var1: Total Tokens
+        - operation: mean
+          value: 9
+          var1: Output Tokens
+        - operation: mean
+          value: 2
+          var1: Input Tokens
+        - operation: mean
+          value: 0.65273
+          var1: Latency
+        project_uuid: '...'
+        run_name: bijou-kail
+        status: completed
+        uuid: '...'
+    MessageSchema:
+      properties:
+        content:
+          anyOf:
+          - type: string
+          - items: {}
+            type: array
+          title: Content
+          description: Message content
+          default: ''
+        role:
+          allOf:
+          - $ref: '#/components/schemas/Role'
+          description: Message role
+          default: user
+      type: object
+      title: MessageSchema
+    GetTestCaseResponseSchema:
+      properties:
+        inputs:
+          additionalProperties:
+            type: string
+          type: object
+          title: Inputs
+          description: Dictionary mapping input names to values. Input names correspond to the column names of the test case collection.
+        target:
+          title: Target
+          description: Optional target/ground truth value for the test case/inputs
           type:
           - string
           - 'null'
-        experiment_uuids:
-          title: Experiment Uuids
-          description: Filters experiments to contain the given UUIDs.
+        tags:
+          items:
+            type: string
+          type: array
+          title: Tags
+          description: List of tags associated with the test case
+          default: []
+        id:
+          type: integer
+          title: Id
+          description: Unique identifier for the test case
+        test_case_collection_id:
+          type: integer
+          title: Test Case Collection Id
+          description: Unique identifier for the test case collection of this test case
+      type: object
+      required:
+      - inputs
+      - id
+      - test_case_collection_id
+      title: GetTestCaseResponseSchema
+      examples:
+      - id: 12345
+        inputs:
+          framework: fastapi
+          language: python
+        tags:
+        - easy
+        target: a good program here
+        test_case_collection_id: 5000
+    GetDeployedPromptResponseSchema:
+      properties:
+        deployment_id:
+          type: string
+          title: Deployment Id
+          description: This is the ID for a deployed prompt. You can find your deployed prompts on the Deployments tab.
+        version_number:
+          type: number
+          title: Version Number
+          description: Version number of the deployed prompt
+        name:
+          title: Name
+          description: Name of the deployed prompt
+          type:
+          - string
+          - 'null'
+        functions:
+          title: Functions
+          description: If deployed prompt has function, these will appear as JSON strings.
           items:
             type: string
           type:
           - array
           - 'null'
+        function_call:
+          title: Function Call
+          description: If deployed prompt has a specified function call, it will appear.
+          type:
+          - string
+          - 'null'
+        prompt:
+          description: The messages of the deployed prompt
+          $ref: '#/components/schemas/PromptSchema'
+        model:
+          title: Model
+          description: Model name of deployed prompt
+          type:
+          - string
+          - 'null'
+        provider:
+          description: Provider name of deployed prompt
+          $ref: '#/components/schemas/ProviderName'
+        model_params:
+          title: Model Params
+          description: Model parameters of deployed prompt
+          type:
+          - object
+          - 'null'
       type: object
-      title: ListExperimentsRequestSchema
+      required:
+      - deployment_id
+      - version_number
+      title: GetDeployedPromptResponseSchema
       examples:
-      - experiment_name_filter: Hello World
-        metadata_filter:
-          purpose: testing
-        project_name: development
-        run_name_filter: v1
-    FilterOperator:
+      - deployment_id: p-qZrnFesaeCpqcXJ_yL3wi
+        functions: []
+        model: gpt-4o-mini
+        model_params:
+          frequency_penalty: 0.0
+          presence_penalty: 0.0
+          temp: 0.5
+          top_p: 1.0
+        name: hello world
+        prompt:
+          inputs:
+            x: Python
+            y: Flask
+          messages:
+          - content: I want a Hello World program in Python. Using the Flask framework.
+            role: user
+          raw_messages:
+          - content: I want a Hello World program in {{x}}. Using the {{y}} framework.
+            role: user
+        provider: openai
+        version_number: 1.0
+    ProviderName:
       type: string
       enum:
-      - equals
-      - not_equals
-      - like
-      - greater_than_or_equal
-      - less_than_or_equal
-      - greater_than
-      - less_than
-      - is_null
-      - exists
-      - in
-      - between
-      title: FilterOperator
+      - openai
+      - azure
+      - anthropic
+      - anyscale
+      - vertexai
+      - aws_bedrock
+      - openrouter
+      - mistral
+      - litellm
+      - groq
+      - fireworks
+      - cohere
+      title: ProviderName
+    ExperimentSchema:
+      properties:
+        name:
+          type: string
+          title: Name
+          description: Name of the experiment
+        run_name:
+          title: Run Name
+          description: Name of the run. Must be unique for each experiment and can only contain alphanumeric characters, hyphens, and underscores.
+          type:
+          - string
+          - 'null'
+        project_uuid:
+          type: string
+          title: Project Uuid
+          description: UUID of the project associated with this experiment
+        is_public:
+          type: boolean
+          title: Is Public
+          description: If experiment should be public
+          default: false
+        metadata:
+          title: Metadata
+          description: Any additional key-value pairs which provide context or are useful for filtering.
+          additionalProperties:
+            type: string
+          type:
+          - object
+          - 'null'
+        uuid:
+          type: string
+          title: Uuid
+          description: UUID of the created experiment
+        created_at:
+          type: string
+          title: Created At
+          description: Timestamp the experiment was created
+      type: object
+      required:
+      - name
+      - project_uuid
+      - uuid
+      - created_at
+      title: ExperimentSchema
+      examples:
+      - created_at: '2024-05-30 13:48:34'
+        metadata:
+          dataset: dev 123
+        name: Test Experiment
+        project_uuid: '...'
+        run_name: test-experiment
+        uuid: '...'
     CreateGetProjectResponseSchema:
       properties:
         name:
@@ -1221,162 +1781,91 @@ components:
         name: development
         uuid: '...'
         was_created: false
-    LLMInputsSchema:
+    TraceLogImage:
       properties:
-        model:
-          title: Model
-          description: Model name
+        url:
+          type: string
+          title: Url
+          description: URL of image
+        caption:
+          title: Caption
+          description: Caption of image
           type:
           - string
           - 'null'
-        provider:
-          description: Provider name
-          $ref: '#/components/schemas/ProviderName'
-        model_params:
-          description: Model parameters
-          $ref: '#/components/schemas/ModelParamsSchema'
-        messages:
-          title: Messages
-          description: List of messages
-          items:
-            $ref: '#/components/schemas/MessageSchema'
-          type:
-          - array
-          - 'null'
-        history:
-          title: History
-          description: List of history messages which are prepended to messages. Useful for chatbot applications which rely on deployed prompts.
-          items:
-            $ref: '#/components/schemas/MessageSchema'
-          type:
-          - array
-          - 'null'
-        functions:
-          title: Functions
-          description: List of function schemas, following the OpenAI API format
-          items: {}
-          type:
-          - array
-          - 'null'
-        function_call:
-          anyOf:
-          - type: string
-          - additionalProperties:
-              type: string
-            type: object
-          title: Function Call
-          description: Optionally, specify the fnction call, following OpenAI API behavior.
-      type: object
-      title: LLMInputsSchema
-    TimeRange:
-      type: string
-      enum:
-      - na
-      - 1h
-      - 3h
-      - 6h
-      - 24h
-      - 7d
-      - 1m
-      - 3m
-      - 6m
-      - 1y
-      title: TimeRange
-    CompletionsResponseSchema:
-      properties:
-        content:
-          type: string
-          title: Content
-          description: Generated completion content.
-        latency:
-          type: number
-          title: Latency
-          description: Latency of the completion in seconds.
-        input_tokens:
-          type: integer
-          title: Input Tokens
-          description: Number of tokens in the input.
-        output_tokens:
-          type: integer
-          title: Output Tokens
-          description: Number of tokens in the output.
-        total_tokens:
-          type: integer
-          title: Total Tokens
-          description: Total number of tokens in the input and output.
-        cost:
-          type: number
-          title: Cost
-          description: Cost of the completion in USD.
-        model:
-          type: string
-          title: Model
-          description: Model name.
-        provider:
-          type: string
-          title: Provider
-          description: Provider name.
-        cache_hit:
-          type: boolean
-          title: Cache Hit
-          description: If true, the completion was fetched from the cache.
-        status:
-          type: string
-          title: Status
-          description: Status of the completion. Either 'success' or 'error'.
-        error:
-          title: Error
-          description: Error message if the completion failed.
-          type:
-          - string
-          - 'null'
-        trace_id:
-          title: Trace Id
-          description: UUID of the log of the completion. Will be the same as the `trace_id` in the request if provided.
-          type:
-          - string
-          - 'null'
-        start_timestamp:
-          type: string
-          title: Start Timestamp
-          description: Start timestamp of the completion.
-        end_timestamp:
-          type: string
-          title: End Timestamp
-          description: End timestamp of the completion.
-        inference_id:
-          type: string
-          title: Inference Id
-          description: UUID of the log of the completion. The same as the `trace_id` in the request if provided.
       type: object
       required:
-      - content
-      - latency
-      - input_tokens
-      - output_tokens
-      - total_tokens
-      - cost
-      - model
-      - provider
-      - cache_hit
-      - status
-      - start_timestamp
-      - end_timestamp
-      - inference_id
-      title: CompletionsResponseSchema
-      example:
-        cache_hit: true
-        content: Sure! Here's a simple Hello World program...
-        cost: 0.0008
-        end_timestamp: '2024-07-24 18:05:17'
-        input_tokens: 22
-        latency: 0.0
-        model: gpt-4o-mini-2024-07-18
-        output_tokens: 189
-        start_timestamp: '2024-07-24 18:05:17'
-        status: success
-        total_tokens: 211
-        trace_id: ush221-d23rfcasc-21cdsc
+      - url
+      title: TraceLogImage
+    CreateTestCaseCollectionRequestSchema:
+      properties:
+        name:
+          type: string
+          title: Name
+          description: Name of the dataset
+        column_names:
+          items:
+            type: string
+          type: array
+          title: Column Names
+          description: Column names for the dataset
+        test_cases:
+          title: Test Cases
+          description: Name of test cases/samples in the dataset
+          items:
+            $ref: '#/components/schemas/TestCaseSchema'
+          type:
+          - array
+          - 'null'
+      type: object
+      required:
+      - name
+      - column_names
+      title: CreateTestCaseCollectionRequestSchema
+      examples:
+      - column_names:
+        - language
+        - framework
+        name: Hello World Programs
+        test_cases:
+        - inputs:
+            framework: fastapi
+            language: python
+          tags:
+          - easy
+          target: a good program here
+    TestCaseSchema:
+      properties:
+        inputs:
+          additionalProperties:
+            type: string
+          type: object
+          title: Inputs
+          description: Dictionary mapping input names to values. Input names correspond to the column names of the test case collection.
+        target:
+          title: Target
+          description: Optional target/ground truth value for the test case/inputs
+          type:
+          - string
+          - 'null'
+        tags:
+          items:
+            type: string
+          type: array
+          title: Tags
+          description: List of tags associated with the test case
+          default: []
+      type: object
+      required:
+      - inputs
+      title: TestCaseSchema
+      examples:
+      - inputs:
+          framework: fastapi
+          language: python
+        tags:
+        - easy
+        target: a good program here
     TraceLogSchema:
       properties:
         configuration:
@@ -1701,145 +2190,29 @@ components:
         status: success
         trace_id: <<UUID>>
         trace_name: LLM
-    ExperimentStatsSchema:
+    FinishExperimentRequestSchema:
       properties:
-        parent_trace_stats:
+        status:
+          allOf:
+          - $ref: '#/components/schemas/ExperimentStatus'
+          description: Status of the experiment. Should be completed or failed
+          default: completed
+        dataset_level_stats:
+          title: Dataset Level Stats
+          description: List of dataset level evals/scores which should be added to the experiment. Examples are Pearson correlation between outputs and targets/ground truth values.
           items:
-            $ref: '#/components/schemas/TraceStatsSchema'
-          type: array
-          title: Parent Trace Stats
-          description: Stats of root-level trace logs of an experiment
-      type: object
-      required:
-      - parent_trace_stats
-      title: ExperimentStatsSchema
-      description: Contains aggregated stats of all root trace logs of an experiment.
-      examples:
-      - parent_trace_stats:
-        - cost: 0.5
-          input_tokens: 100
-          latency: 0.5
-          output_tokens: 200
-          scores:
-          - name: accuracy
-            score: 0.5
-          total_tokens: 300
-          trace_id: sasdc-csd-rnFesaeCpqcXJ_yL3wi
-    CreateGetProjectRequestSchema:
-      properties:
-        name:
-          type: string
-          title: Name
-          description: Name of the project
-      type: object
-      required:
-      - name
-      title: CreateGetProjectRequestSchema
-      examples:
-      - name: development
-    TraceLogImage:
-      properties:
-        url:
-          type: string
-          title: Url
-          description: URL of image
-        caption:
-          title: Caption
-          description: Caption of image
-          type:
-          - string
-          - 'null'
-      type: object
-      required:
-      - url
-      title: TraceLogImage
-    UpdateTestCasePublicRequestSchema:
-      properties:
-        inputs:
-          title: Inputs
-          description: Key-value pairs for the inputs of that item
-          type:
-          - object
-          - 'null'
-        target:
-          title: Target
-          description: Target/ground truth value for the item
-          type:
-          - string
-          - 'null'
-        tags:
-          title: Tags
-          description: Tags for the item
-          items:
-            type: string
+            $ref: '#/components/schemas/EvaluationScoreSchema'
           type:
           - array
           - 'null'
       type: object
-      title: UpdateTestCasePublicRequestSchema
-      description: Any set field will be used to update the item in the dataset.
+      title: FinishExperimentRequestSchema
+      description: Any additional information to be added to the experiment
       examples:
-      - inputs:
-          framework: gin
-          language: golang
-    DeploymentPromptIdSchema:
-      properties:
-        deployment_id:
-          type: string
-          title: Deployment Id
-          description: ID of deployed prompt
-        llm_inputs:
-          title: Llm Inputs
-          description: If provided, these key-value pairs will be used to replace the corresponding keys in the templated prompt
-          type:
-          - object
-          - 'null'
-      type: object
-      required:
-      - deployment_id
-      title: DeploymentPromptIdSchema
-      example:
-        deployment_id: p-qZrnFesaeCpqcXJ_yL3wi
-        llm_inputs:
-          x: Python
-          y: Flask
-    CreateTestCaseCollectionRequestSchema:
-      properties:
-        name:
-          type: string
-          title: Name
-          description: Name of the dataset
-        column_names:
-          items:
-            type: string
-          type: array
-          title: Column Names
-          description: Column names for the dataset
-        test_cases:
-          title: Test Cases
-          description: Name of test cases/samples in the dataset
-          items:
-            $ref: '#/components/schemas/TestCaseSchema'
-          type:
-          - array
-          - 'null'
-      type: object
-      required:
-      - name
-      - column_names
-      title: CreateTestCaseCollectionRequestSchema
-      examples:
-      - column_names:
-        - language
-        - framework
-        name: Hello World Programs
-        test_cases:
-        - inputs:
-            framework: fastapi
-            language: python
-          tags:
-          - easy
-          target: a good program here
+      - dataset_level_stats:
+        - name: pearson_correlation
+          score: 0.8
+        status: completed
     FeedbackRequestSchema:
       properties:
         trace_id:
@@ -1893,271 +2266,268 @@ components:
         score: 0.5
         target: perfect answer
         trace_id: sasdc-csd-rnFesaeCpqcXJ_yL3wi
-    GetTestCaseResponseSchema:
+    TimeRange:
+      type: string
+      enum:
+      - na
+      - 1h
+      - 3h
+      - 6h
+      - 24h
+      - 7d
+      - 1m
+      - 3m
+      - 6m
+      - 1y
+      title: TimeRange
+    Role:
+      type: string
+      enum:
+      - user
+      - assistant
+      - system
+      - user
+      - assistant
+      - function
+      - tool
+      title: Role
+    CreateTestCaseCollectionResponseSchema:
       properties:
-        inputs:
-          additionalProperties:
-            type: string
-          type: object
-          title: Inputs
-          description: Dictionary mapping input names to values. Input names correspond to the column names of the test case collection.
-        target:
-          title: Target
-          description: Optional target/ground truth value for the test case/inputs
-          type:
-          - string
-          - 'null'
-        tags:
-          items:
-            type: string
-          type: array
-          title: Tags
-          description: List of tags associated with the test case
-          default: []
         id:
           type: integer
           title: Id
-          description: Unique identifier for the test case
-        test_case_collection_id:
-          type: integer
-          title: Test Case Collection Id
-          description: Unique identifier for the test case collection of this test case
+          description: Unique identifier for the dataset
+        last_updated_at:
+          type: string
+          title: Last Updated At
+          description: Timestamp when the dataset was last updated
+        test_case_ids:
+          items:
+            type: integer
+          type: array
+          title: Test Case Ids
+          description: List of created test case IDs in the dataset
       type: object
       required:
-      - inputs
       - id
-      - test_case_collection_id
-      title: GetTestCaseResponseSchema
+      - last_updated_at
+      - test_case_ids
+      title: CreateTestCaseCollectionResponseSchema
       examples:
-      - id: 12345
-        inputs:
-          framework: fastapi
-          language: python
-        tags:
-        - easy
-        target: a good program here
-        test_case_collection_id: 5000
-    ExperimentWithStatsSchema:
+      - id: 5000
+        last_updated_at: '2021-06-01T00:00:00Z'
+        test_case_ids:
+        - 12345
+    HTTPValidationError:
       properties:
-        name:
-          type: string
-          title: Name
-          description: Name of the experiment
-        run_name:
-          title: Run Name
-          description: Name of the run. Must be unique for each experiment and can only contain alphanumeric characters, hyphens, and underscores.
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    InputsSchema-Input:
+      properties:
+        model:
+          title: Model
+          description: Model name
           type:
           - string
           - 'null'
-        project_uuid:
-          type: string
-          title: Project Uuid
-          description: UUID of the project associated with this experiment
-        is_public:
-          type: boolean
-          title: Is Public
-          description: If experiment should be public
-          default: false
-        metadata:
-          title: Metadata
-          description: Any additional key-value pairs which provide context or are useful for filtering.
-          additionalProperties:
-            type: string
+        provider:
+          title: Provider
+          description: Provider name
+          type:
+          - string
+          - 'null'
+        model_params:
+          description: Parameters such as temperature.
+          $ref: '#/components/schemas/ParamsSchema'
+        messages:
+          title: Messages
+          description: Messages to LLM
+          items:
+            $ref: '#/components/schemas/MessageSchema'
+          type:
+          - array
+          - 'null'
+        functions:
+          title: Functions
+          description: A list of functions the model may generate JSON inputs for. Assumes every item in list has key 'name', 'description' and 'parameters'
+          items: {}
+          type:
+          - array
+          - 'null'
+        function_call:
+          anyOf:
+          - type: string
+          - type: object
+          title: Function Call
+          description: "Controls how the model responds to function calls. â€œautoâ€\x9D means the model can pick between an end-user or calling a function. To specifying a particular function name use a dictionary with key=â€œnameâ€\x9D and value=â€œmy_functionâ€\x9D. This will force the model to call that function."
+      type: object
+      title: InputsSchema
+      description: Inputs for LLM inference such as messages, functions and additional parameters.
+    ModelParamsSchema:
+      properties:
+        model:
+          title: Model
+          description: Model name
+          default: ''
+          type:
+          - string
+          - 'null'
+        temp:
+          title: Temp
+          description: Temperature
+          default: 1.0
+          type:
+          - number
+          - 'null'
+          maximum: 1.0
+          minimum: 0.0
+        top_p:
+          title: Top P
+          description: Top p
+          default: 1.0
+          type:
+          - number
+          - 'null'
+          maximum: 1.0
+          minimum: 0.0
+        frequency_penalty:
+          title: Frequency Penalty
+          description: Frequency penalty
+          default: 0.0
+          type:
+          - number
+          - 'null'
+          maximum: 2.0
+          minimum: -2.0
+        presence_penalty:
+          title: Presence Penalty
+          description: Presence penalty
+          default: 0.0
+          type:
+          - number
+          - 'null'
+          maximum: 2.0
+          minimum: -2.0
+        max_length:
+          title: Max Length
+          description: Max length of the output
+          type:
+          - integer
+          - 'null'
+        response_format:
+          title: Response Format
+          description: Response format
           type:
           - object
           - 'null'
-        uuid:
-          type: string
-          title: Uuid
-          description: UUID of the created experiment
-        created_at:
-          type: string
-          title: Created At
-          description: Timestamp the experiment was created
-        status:
-          allOf:
-          - $ref: '#/components/schemas/ExperimentStatus'
-          description: Status of the experiment
-        pinned_stats:
-          items:
-            $ref: '#/components/schemas/ExperimentPinnedStatistic'
-          type: array
-          title: Pinned Stats
-          description: List of population/dataset-level statistics. Typically contains mean of any reported scores, latencies, etc.
-        num_samples:
-          title: Num Samples
-          description: Number of samples in the experiment
+        safe_prompt:
+          title: Safe Prompt
+          description: Safe prompt. Only used for Mistral
           type:
-          - integer
+          - boolean
           - 'null'
       type: object
-      required:
-      - name
-      - project_uuid
-      - uuid
-      - created_at
-      - status
-      - pinned_stats
-      title: ExperimentWithStatsSchema
-      examples:
-      - created_at: '2024-04-15 22:19:13'
-        is_public: false
-        metadata:
-          dataset: dev 123
-        name: greeting
-        num_samples: 6
-        pinned_stats:
-        - operation: mean
-          value: 0.176471
-          var1: levenshtein
-        - operation: mean
-          value: 2.0e-05
-          var1: Cost
-        - operation: mean
-          value: 11
-          var1: Total Tokens
-        - operation: mean
-          value: 9
-          var1: Output Tokens
-        - operation: mean
-          value: 2
-          var1: Input Tokens
-        - operation: mean
-          value: 0.65273
-          var1: Latency
-        project_uuid: '...'
-        run_name: bijou-kail
-        status: completed
-        uuid: '...'
-    FilterBaseSchema:
+      title: ModelParamsSchema
+    CompletionsResponseSchema:
       properties:
-        filter_field:
-          title: Filter Field
-          description: 'Field to filter on.
-
-            If you want to filter by a score, you need to follow this format: ''score:{score_name}''.
-
-            If you want to filter by annotation, you need to follow this format: ''annotation:{annotation_type}:{annotation_id}''.'
-          type:
-          - string
-          - 'null'
-        filter_key:
-          title: Filter Key
-          description: Filter by key when filtering on a map
-          type:
-          - string
-          - 'null'
-        filter_operator:
-          description: Filter operator
-          $ref: '#/components/schemas/FilterOperator'
-        filter_value:
-          title: Filter Value
-          description: Filter value
-          type:
-          - string
-          - 'null'
-      type: object
-      title: FilterBaseSchema
-      examples:
-      - filter_field: trace_name
-        filter_operator: like
-        filter_value: llm
-    TraceLogCommentSchema:
-      properties:
-        trace_id:
+        content:
           type: string
-          title: Trace Id
-          description: Trace ID
-        comment:
-          type: string
-          title: Comment
-          description: Comment
-        id:
-          anyOf:
-          - type: string
-          - type: integer
-          title: Id
-          description: Comment ID
-        user_id:
-          type: string
-          title: User Id
-          description: User ID
-        user_email_address:
-          title: User Email Address
-          description: User email address
-          type:
-          - string
-          - 'null'
-        created_at:
-          type: string
-          title: Created At
-          description: Comment creation timestamp
-      type: object
-      required:
-      - trace_id
-      - comment
-      - id
-      - user_id
-      - created_at
-      title: TraceLogCommentSchema
-    EvaluationScoreSchema:
-      properties:
-        name:
-          type: string
-          title: Name
-          description: Name of the score / evaluation
-        score:
+          title: Content
+          description: Generated completion content.
+        latency:
           type: number
-          title: Score
-          description: Value of the score
-        evaluation_metric_id:
-          title: Evaluation Metric Id
-          description: Will be automatically populated if this score was from a deployed evaluation metric.
-          type:
-          - integer
-          - 'null'
-        reason:
-          title: Reason
-          description: Reason for this score
+          title: Latency
+          description: Latency of the completion in seconds.
+        input_tokens:
+          type: integer
+          title: Input Tokens
+          description: Number of tokens in the input.
+        output_tokens:
+          type: integer
+          title: Output Tokens
+          description: Number of tokens in the output.
+        total_tokens:
+          type: integer
+          title: Total Tokens
+          description: Total number of tokens in the input and output.
+        cost:
+          type: number
+          title: Cost
+          description: Cost of the completion in USD.
+        model:
+          type: string
+          title: Model
+          description: Model name.
+        provider:
+          type: string
+          title: Provider
+          description: Provider name.
+        cache_hit:
+          type: boolean
+          title: Cache Hit
+          description: If true, the completion was fetched from the cache.
+        status:
+          type: string
+          title: Status
+          description: Status of the completion. Either 'success' or 'error'.
+        error:
+          title: Error
+          description: Error message if the completion failed.
           type:
           - string
           - 'null'
+        trace_id:
+          title: Trace Id
+          description: UUID of the log of the completion. Will be the same as the `trace_id` in the request if provided.
+          type:
+          - string
+          - 'null'
+        start_timestamp:
+          type: string
+          title: Start Timestamp
+          description: Start timestamp of the completion.
+        end_timestamp:
+          type: string
+          title: End Timestamp
+          description: End timestamp of the completion.
+        inference_id:
+          type: string
+          title: Inference Id
+          description: UUID of the log of the completion. The same as the `trace_id` in the request if provided.
       type: object
       required:
-      - name
-      - score
-      title: EvaluationScoreSchema
-      examples:
-      - name: Answer Matches Target
-        reason: The answer is mostly correct but lacks aspect A & B.
-        score: 0.8
-    PaginatedResponse_TraceLogTreeSchema_:
-      properties:
-        total:
-          type: integer
-          title: Total
-        page:
-          type: integer
-          title: Page
-        total_pages:
-          type: integer
-          title: Total Pages
-        page_size:
-          type: integer
-          title: Page Size
-        results:
-          items:
-            $ref: '#/components/schemas/TraceLogTreeSchema'
-          type: array
-          title: Results
-      type: object
-      required:
-      - total
-      - page
-      - total_pages
-      - page_size
-      - results
-      title: PaginatedResponse[TraceLogTreeSchema]
+      - content
+      - latency
+      - input_tokens
+      - output_tokens
+      - total_tokens
+      - cost
+      - model
+      - provider
+      - cache_hit
+      - status
+      - start_timestamp
+      - end_timestamp
+      - inference_id
+      title: CompletionsResponseSchema
+      example:
+        cache_hit: true
+        content: Sure! Here's a simple Hello World program...
+        cost: 0.0008
+        end_timestamp: '2024-07-24 18:05:17'
+        input_tokens: 22
+        latency: 0.0
+        model: gpt-4o-mini-2024-07-18
+        output_tokens: 189
+        start_timestamp: '2024-07-24 18:05:17'
+        status: success
+        total_tokens: 211
+        trace_id: ush221-d23rfcasc-21cdsc
     InputsSchema-Output:
       properties:
         model:
@@ -2199,239 +2569,60 @@ components:
       type: object
       title: InputsSchema
       description: Inputs for LLM inference such as messages, functions and additional parameters.
-    MessageSchema:
+    ListExperimentsRequestSchema:
       properties:
-        content:
-          anyOf:
-          - type: string
-          - items: {}
-            type: array
-          title: Content
-          description: Message content
-          default: ''
-        role:
-          allOf:
-          - $ref: '#/components/schemas/Role'
-          description: Message role
-          default: user
-      type: object
-      title: MessageSchema
-    GetDeployedPromptResponseSchema:
-      properties:
-        deployment_id:
-          type: string
-          title: Deployment Id
-          description: This is the ID for a deployed prompt. You can find your deployed prompts on the Deployments tab.
-        version_number:
-          type: number
-          title: Version Number
-          description: Version number of the deployed prompt
-        name:
-          title: Name
-          description: Name of the deployed prompt
+        project_name:
+          title: Project Name
+          description: Name of the project to filter experiments by.
           type:
           - string
           - 'null'
-        functions:
-          title: Functions
-          description: If deployed prompt has function, these will appear as JSON strings.
+        metadata_filter:
+          title: Metadata Filter
+          description: Filters experiments to contain the given metadata. The metadata_filter is a dictionary where the keys are the metadata keys and the values are the metadata values to filter by.
+          type:
+          - object
+          - 'null'
+        experiment_name_filter:
+          title: Experiment Name Filter
+          description: Filters experiments to contain the given string in their name.
+          type:
+          - string
+          - 'null'
+        run_name_filter:
+          title: Run Name Filter
+          description: Filters experiments to contain the given string in their run name.
+          type:
+          - string
+          - 'null'
+        experiment_uuids:
+          title: Experiment Uuids
+          description: Filters experiments to contain the given UUIDs.
           items:
             type: string
           type:
           - array
           - 'null'
-        function_call:
-          title: Function Call
-          description: If deployed prompt has a specified function call, it will appear.
-          type:
-          - string
-          - 'null'
-        prompt:
-          description: The messages of the deployed prompt
-          $ref: '#/components/schemas/PromptSchema'
-        model:
-          title: Model
-          description: Model name of deployed prompt
-          type:
-          - string
-          - 'null'
-        provider:
-          description: Provider name of deployed prompt
-          $ref: '#/components/schemas/ProviderName'
-        model_params:
-          title: Model Params
-          description: Model parameters of deployed prompt
-          type:
-          - object
-          - 'null'
       type: object
-      required:
-      - deployment_id
-      - version_number
-      title: GetDeployedPromptResponseSchema
+      title: ListExperimentsRequestSchema
       examples:
-      - deployment_id: p-qZrnFesaeCpqcXJ_yL3wi
-        functions: []
-        model: gpt-4o-mini
-        model_params:
-          frequency_penalty: 0.0
-          presence_penalty: 0.0
-          temp: 0.5
-          top_p: 1.0
-        name: hello world
-        prompt:
-          inputs:
-            x: Python
-            y: Flask
-          messages:
-          - content: I want a Hello World program in Python. Using the Flask framework.
-            role: user
-          raw_messages:
-          - content: I want a Hello World program in {{x}}. Using the {{y}} framework.
-            role: user
-        provider: openai
-        version_number: 1.0
-    Role:
-      type: string
-      enum:
-      - user
-      - assistant
-      - system
-      - user
-      - assistant
-      - function
-      - tool
-      title: Role
-    ExperimentPinnedStatistic:
+      - experiment_name_filter: Hello World
+        metadata_filter:
+          purpose: testing
+        project_name: development
+        run_name_filter: v1
+    CreateGetProjectRequestSchema:
       properties:
-        var1:
-          type: string
-          title: Var1
-          description: Name of the first variable
-        var2:
-          title: Var2
-          description: Name of the second variable
-          type:
-          - string
-          - 'null'
-        operation:
-          allOf:
-          - $ref: '#/components/schemas/StatisticOperation'
-          description: What operation was executed on the variables to get value
-        value:
-          type: number
-          title: Value
-          description: Value of the statistic
-      type: object
-      required:
-      - var1
-      - operation
-      - value
-      title: ExperimentPinnedStatistic
-      examples:
-      - operation: mean
-        value: 0.23
-        var1: Latency
-    ProviderName:
-      type: string
-      enum:
-      - openai
-      - azure
-      - anthropic
-      - anyscale
-      - vertexai
-      - aws_bedrock
-      - openrouter
-      - mistral
-      - litellm
-      - groq
-      - fireworks
-      - cohere
-      title: ProviderName
-    CreateTestCaseCollectionResponseSchema:
-      properties:
-        id:
-          type: integer
-          title: Id
-          description: Unique identifier for the dataset
-        last_updated_at:
-          type: string
-          title: Last Updated At
-          description: Timestamp when the dataset was last updated
-        test_case_ids:
-          items:
-            type: integer
-          type: array
-          title: Test Case Ids
-          description: List of created test case IDs in the dataset
-      type: object
-      required:
-      - id
-      - last_updated_at
-      - test_case_ids
-      title: CreateTestCaseCollectionResponseSchema
-      examples:
-      - id: 5000
-        last_updated_at: '2021-06-01T00:00:00Z'
-        test_case_ids:
-        - 12345
-    GetTestCaseCollectionResponseSchema:
-      properties:
-        id:
-          type: integer
-          title: Id
-          description: Unique identifier for the test case collection
         name:
           type: string
           title: Name
-          description: Name of the test case collection
-        column_names:
-          items:
-            type: string
-          type: array
-          title: Column Names
-          description: Column names for the test case collection
-        created_at:
-          type: string
-          title: Created At
-          description: Timestamp when the test case collection was created
-        last_updated_at:
-          type: string
-          title: Last Updated At
-          description: Timestamp when the test case collection was last updated
-        test_cases:
-          additionalProperties:
-            $ref: '#/components/schemas/GetTestCaseResponseSchema'
-          type: object
-          title: Test Cases
-          description: Dictionary mapping test case ID to test case
+          description: Name of the project
       type: object
       required:
-      - id
       - name
-      - column_names
-      - created_at
-      - last_updated_at
-      - test_cases
-      title: GetTestCaseCollectionResponseSchema
+      title: CreateGetProjectRequestSchema
       examples:
-      - column_names:
-        - language
-        - framework
-        created_at: '2021-06-01T00:00:00Z'
-        id: 5000
-        last_updated_at: '2021-06-01T00:00:00Z'
-        name: Hello World Programs
-        test_cases:
-          '12345':
-            id: 12345
-            inputs:
-              framework: fastapi
-              language: python
-            tags:
-            - easy
-            target: a good program here
-            test_case_collection_id: 5000
+      - name: development
     TraceLogTreeSchema:
       properties:
         configuration:
@@ -2762,105 +2953,8 @@ components:
         status: success
         trace_id: <<UUID>>
         trace_name: LLM
-    FinishExperimentRequestSchema:
+    FilterBaseSchema:
       properties:
-        status:
-          allOf:
-          - $ref: '#/components/schemas/ExperimentStatus'
-          description: Status of the experiment. Should be completed or failed
-          default: completed
-        dataset_level_stats:
-          title: Dataset Level Stats
-          description: List of dataset level evals/scores which should be added to the experiment. Examples are Pearson correlation between outputs and targets/ground truth values.
-          items:
-            $ref: '#/components/schemas/EvaluationScoreSchema'
-          type:
-          - array
-          - 'null'
-      type: object
-      title: FinishExperimentRequestSchema
-      description: Any additional information to be added to the experiment
-      examples:
-      - dataset_level_stats:
-        - name: pearson_correlation
-          score: 0.8
-        status: completed
-    ExperimentStatus:
-      type: string
-      enum:
-      - pending
-      - running
-      - completed
-      - failed
-      title: ExperimentStatus
-    ValidationError:
-      properties:
-        loc:
-          items:
-            anyOf:
-            - type: string
-            - type: integer
-          type: array
-          title: Location
-        msg:
-          type: string
-          title: Message
-        type:
-          type: string
-          title: Error Type
-      type: object
-      required:
-      - loc
-      - msg
-      - type
-      title: ValidationError
-    TestCaseSchema:
-      properties:
-        inputs:
-          additionalProperties:
-            type: string
-          type: object
-          title: Inputs
-          description: Dictionary mapping input names to values. Input names correspond to the column names of the test case collection.
-        target:
-          title: Target
-          description: Optional target/ground truth value for the test case/inputs
-          type:
-          - string
-          - 'null'
-        tags:
-          items:
-            type: string
-          type: array
-          title: Tags
-          description: List of tags associated with the test case
-          default: []
-      type: object
-      required:
-      - inputs
-      title: TestCaseSchema
-      examples:
-      - inputs:
-          framework: fastapi
-          language: python
-        tags:
-        - easy
-        target: a good program here
-    QueryParamsPaginationPublic:
-      properties:
-        page:
-          type: integer
-          title: Page
-          description: Page number starting from 1
-          default: 1
-          exclusiveMinimum: 0.0
-        page_size:
-          type: integer
-          maximum: 100000.0
-          title: Page Size
-          description: Number of items per page
-          default: 20
-          exclusiveMinimum: 0.0
         filter_field:
           title: Filter Field
           description: 'Field to filter on.
@@ -2886,269 +2980,175 @@ components:
           type:
           - string
           - 'null'
-        project_name:
-          type: string
-          title: Project Name
-          description: Filter by project name
-        time_range:
-          allOf:
-          - $ref: '#/components/schemas/TimeRange'
-          description: 'Time range for the logs: 1h,3h,6h,24h, 7d, 1m, 3m, 1y or na'
-          default: na
-        status:
-          title: Status
-          description: 'Filter by status: success, error'
-          type:
-          - string
-          - 'null'
       type: object
-      required:
-      - project_name
-      title: QueryParamsPaginationPublic
+      title: FilterBaseSchema
       examples:
       - filter_field: trace_name
         filter_operator: like
         filter_value: llm
-    HTTPValidationError:
+    ExperimentPinnedStatistic:
       properties:
-        detail:
-          items:
-            $ref: '#/components/schemas/ValidationError'
-          type: array
-          title: Detail
+        var1:
+          type: string
+          title: Var1
+          description: Name of the first variable
+        var2:
+          title: Var2
+          description: Name of the second variable
+          type:
+          - string
+          - 'null'
+        operation:
+          allOf:
+          - $ref: '#/components/schemas/StatisticOperation'
+          description: What operation was executed on the variables to get value
+        value:
+          type: number
+          title: Value
+          description: Value of the statistic
       type: object
-      title: HTTPValidationError
-    PromptSchema:
+      required:
+      - var1
+      - operation
+      - value
+      title: ExperimentPinnedStatistic
+      examples:
+      - operation: mean
+        value: 0.23
+        var1: Latency
+    EvaluationScoreSchema:
       properties:
-        raw_messages:
-          items:
-            type: object
-          type: array
-          title: Raw Messages
-          description: List of templated messages as they were created in the UI.
+        name:
+          type: string
+          title: Name
+          description: Name of the score / evaluation
+        score:
+          type: number
+          title: Score
+          description: Value of the score
+        evaluation_metric_id:
+          title: Evaluation Metric Id
+          description: Will be automatically populated if this score was from a deployed evaluation metric.
+          type:
+          - integer
+          - 'null'
+        reason:
+          title: Reason
+          description: Reason for this score
+          type:
+          - string
+          - 'null'
+      type: object
+      required:
+      - name
+      - score
+      title: EvaluationScoreSchema
+      examples:
+      - name: Answer Matches Target
+        reason: The answer is mostly correct but lacks aspect A & B.
+        score: 0.8
+    LLMInputsSchema:
+      properties:
+        model:
+          title: Model
+          description: Model name
+          type:
+          - string
+          - 'null'
+        provider:
+          description: Provider name
+          $ref: '#/components/schemas/ProviderName'
+        model_params:
+          description: Model parameters
+          $ref: '#/components/schemas/ModelParamsSchema'
         messages:
-          items:
-            type: object
-          type: array
           title: Messages
-          description: If `inputs` were given in request, these messages will be the filled-in version of `raw_messages`. Otherwise, they will be the same as `raw_messages`.
-        inputs:
-          title: Inputs
-          description: If you would like to fill in your prompt template with inputs you can provided then as a dictionary. The keys should match the names of the deployed prompt templateâ€™s variables.
+          description: List of messages
+          items:
+            $ref: '#/components/schemas/MessageSchema'
+          type:
+          - array
+          - 'null'
+        history:
+          title: History
+          description: List of history messages which are prepended to messages. Useful for chatbot applications which rely on deployed prompts.
+          items:
+            $ref: '#/components/schemas/MessageSchema'
+          type:
+          - array
+          - 'null'
+        functions:
+          title: Functions
+          description: List of function schemas, following the OpenAI API format
+          items: {}
+          type:
+          - array
+          - 'null'
+        function_call:
+          anyOf:
+          - type: string
+          - additionalProperties:
+              type: string
+            type: object
+          title: Function Call
+          description: Optionally, specify the fnction call, following OpenAI API behavior.
+      type: object
+      title: LLMInputsSchema
+    ExperimentStatus:
+      type: string
+      enum:
+      - pending
+      - running
+      - completed
+      - failed
+      title: ExperimentStatus
+    DeploymentPromptIdSchema:
+      properties:
+        deployment_id:
+          type: string
+          title: Deployment Id
+          description: ID of deployed prompt
+        llm_inputs:
+          title: Llm Inputs
+          description: If provided, these key-value pairs will be used to replace the corresponding keys in the templated prompt
           type:
           - object
           - 'null'
       type: object
       required:
-      - raw_messages
-      - messages
-      title: PromptSchema
-    CompletionsSchema:
-      properties:
+      - deployment_id
+      title: DeploymentPromptIdSchema
+      example:
+        deployment_id: p-qZrnFesaeCpqcXJ_yL3wi
         llm_inputs:
-          title: Llm Inputs
-          description: Key-value pairs as inputs to prompt template. Only needs to be provided if `deployment_id` is provided or `llm_configuration.messages` are templated.
-          type:
-          - object
-          - 'null'
-        llm_configuration:
-          allOf:
-          - $ref: '#/components/schemas/LLMInputsSchema'
-          description: LLM configuration parameters such as messages, functions, etc.
-          default: {}
-        project_name:
-          title: Project Name
-          description: Project name which is used to associate the log with a project.
-          default: default
-          type:
-          - string
-          - 'null'
-        project_uuid:
-          title: Project Uuid
-          description: Project UUID which is used to associate the log with a project. Does not need to be provided if the `project_name` is provided.
-          type:
-          - string
-          - 'null'
-        experiment_uuid:
-          title: Experiment Uuid
-          description: Experiment UUID which is used to associate the log with an experiment.
-          type:
-          - string
-          - 'null'
-        parent_trace_id:
-          title: Parent Trace Id
-          description: UUID of the parent log. If given, will be used to associate the generation in a chain & create hierarchical nested logs.
-          type:
-          - string
-          - 'null'
+          x: Python
+          y: Flask
+    UpdateLogSchema:
+      properties:
+        trace_id:
+          type: string
+          title: Trace Id
+          description: UUID of the trace log which should be updated
+        field_name_to_value_map:
+          type: object
+          title: Field Name To Value Map
+          description: Key-value pairs how each given field (`key`) of the trace log should be updated with `value`. For field names, see `TraceLogSchema`.
         root_trace_id:
           title: Root Trace Id
-          description: UUID of the root log. If given, will be used to associate the generation in a chain & create hierarchical nested logs.
+          description: UUID of root trace
           type:
           - string
           - 'null'
-        end_user_identifier:
-          title: End User Identifier
-          description: Special field to track the end user which is interacting with your LLM app.
-          type:
-          - string
-          - 'null'
-        deployment_id:
-          title: Deployment Id
-          description: This is the ID for a specific deployed prompt. You can find your deployed prompts on the Deployments tab. If a deployment_id is provided, Parea will fetch all of the associated configuration including model name, model parameters, and any associated functions. Any information provided on the llm_configuration field will be used instead of the associated deployed prompts fields.
-          type:
-          - string
-          - 'null'
-        eval_metric_ids:
-          title: Eval Metric Ids
-          description: List of evaluation metric IDs deployed on Parea which should be used to evaluate the completion output.
-          items:
-            type: integer
-          type:
-          - array
-          - 'null'
-        metadata:
-          title: Metadata
-          description: Key-value pairs to be associated with the log.
-          type:
-          - object
-          - 'null'
-        tags:
-          title: Tags
-          description: List of tags to be associated with the log.
-          items:
-            type: string
-          type:
-          - array
-          - 'null'
-        target:
-          title: Target
-          description: Optional ground truth output for the inputs. Will be used for evaluation and can be used when creating a test case from the log.
-          type:
-          - string
-          - 'null'
-        trace_id:
-          title: Trace Id
-          description: UUID of the generation log. If not given, will be auto-generated.
-          type:
-          - string
-          - 'null'
-        trace_name:
-          title: Trace Name
-          description: Name of the generation log. If not given, will be auto-generated in the format `llm-{provider}`.
-          type:
-          - string
-          - 'null'
-        provider_api_key:
-          title: Provider Api Key
-          description: Provider API key to generate response. If not given, API keys saved on the platform will be used
-          type:
-          - string
-          - 'null'
-        cache:
-          type: boolean
-          title: Cache
-          description: If true, the completion will be cached to avoid latency & cost for any subsequent completion using the same inputs.
-          default: true
-        log_omit_inputs:
-          type: boolean
-          title: Log Omit Inputs
-          description: If true, the inputs, llm_configuration.messages, llm_configuration.functions, llm_configuration.model_params will not be logged.
-          default: false
-        log_omit_outputs:
-          type: boolean
-          title: Log Omit Outputs
-          description: If true, the generated response will not be logged.
-          default: false
-        log_omit:
-          type: boolean
-          title: Log Omit
-          description: Equivalent to setting both log_omit_inputs and log_omit_outputs to true.
-          default: false
-        log_sample_rate:
-          title: Log Sample Rate
-          description: If specified, this log and its entire associated trace will logged with this probability. Must be between 0 and 1 (incl.). Defaults to 1.0 (i.e., keeping all logs)
-          default: 1.0
-          type:
-          - number
-          - 'null'
-          maximum: 1.0
-          minimum: 0.0
-        inference_id:
-          title: Inference Id
-          description: Deprecated field which is the same `trace_id`
-          type:
-          - string
-          - 'null'
-        name:
-          title: Name
-          description: Deprecated field
-          type:
-          - string
-          - 'null'
-        retry:
-          type: boolean
-          title: Retry
-          description: Deprecated field
-          default: false
-        fallback_strategy:
-          title: Fallback Strategy
-          description: Deprecated field
-          items:
-            type: string
-          type:
-          - array
-          - 'null'
-        stream:
-          type: boolean
-          title: Stream
-          description: Deprecated field. Use /completion/stream instead.
-          default: false
       type: object
-      title: CompletionsSchema
+      required:
+      - trace_id
+      - field_name_to_value_map
+      title: UpdateLogSchema
       examples:
-      - end_user_identifier: 2596@gmail.com
-        inputs:
-          city: New York
-        llm_configuration:
-          function_call: auto
-          functions:
-          - description: Get the current weather in a given location.
-            name: get_current_weather
-            parameters:
-              properties:
-                location:
-                  description: The city and state, e.g. San Francisco, CA
-                  type: string
-                unit:
-                  enum:
-                  - celsius
-                  - fahrenheit
-                  type: string
-              required:
-              - location
-              type: object
-          messages:
-          - content: What is the weather in New York
-            role: user
-          model: gpt-4o-mini
-          model_params:
-            max_length: 500
-            model: gpt-4o-mini
-            temp: 0.0
-          provider: openai
-        metadata:
-          purpose: testing
-          user_id: user_2Q9afRAKe6SZrc3U7
-        tags:
-        - weather
-        - forecast
-      - deployment_id: p-qZrnFesaeCpqcXJ_yL3wi
-        llm_inputs:
-          x: Golang
-          y: Fiber
-        metadata:
-          purpose: testing
+      - field_name_to_value_map:
+          error: Some error message
+          status: error
+        trace_id: sasdc-csd-rnFesaeCpqcXJ_yL3wi
   securitySchemes:
     OAuth2PasswordBearer:
       type: oauth2
