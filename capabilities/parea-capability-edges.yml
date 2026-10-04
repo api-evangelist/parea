@@ -1,0 +1,26 @@
+slug: parea
+provider: Parea AI
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 1
+edges:
+- tag: Parea
+  spec_file: parea-parea-api-openapi.yml
+  capability_id: BC-610.60
+  capability_id_l1: BC-610
+  capability_name: Artificial Intelligence Management
+  confidence: 0.8
+  evidence: '''Record Trace Log'', ''Fetch Deployed Prompt'', ''Create Experiment Api'', ''Get Experiment
+    Stats Api'', ''Record Feedback''; schemas PromptSchema, ExperimentSchema, TraceStatsSchema'
+  reason: The surface manages prompt versions/deployments, LLM trace logging, evaluation experiments and
+    human feedback — the lifecycle and operational monitoring of LLM applications, i.e. AI/ML model lifecycle
+    and MLOps under Artificial Intelligence Management.

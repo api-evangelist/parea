@@ -79,6 +79,9 @@ apis:
   - type: Documentation
     url: https://docs.parea.ai
 common:
+  - type: CapabilityMap
+    url: capabilities/parea-capability-edges.yml
+    name: Parea AI Business Capability Map
   - type: AgenticAccess
     url: agentic-access/parea-agentic-access.yml
   - type: DomainSecurity
