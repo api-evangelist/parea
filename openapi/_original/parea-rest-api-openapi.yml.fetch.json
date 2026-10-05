@@ -1,0 +1,12 @@
+{
+ "url": "https://docs.parea.ai/openapi.json",
+ "requested_url": "https://docs.parea.ai/openapi.json",
+ "status": 200,
+ "content_type": "application/json",
+ "bytes": 472335,
+ "sha256": "e65a76eb1e1ef4aada6ba8f18b6990481b80d2d50a377ba375114773615007d3",
+ "fetched_at": "2026-10-04",
+ "fetched_by": "APIEvangelist-Harvest/1.0 (+https://apievangelist.com)",
+ "match": "equivalent",
+ "note": "Re-fetched from the provider by verify-openapi-sources.py; the provider's current document describes the same operations (Jaccard 1.0), but the bytes differ, so the archive is an earlier or reformatted copy."
+}
