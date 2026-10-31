@@ -1,4 +1,4 @@
-# Parea AI (parea)
+# Parea AI
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,63 +64,156 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Parea AI is an LLM evaluation, testing, and observability platform designed for AI engineering teams building production-ready LLM applications. The platform provides a REST API for managing prompt versions, running automated test suites, collecting human feedback, and tracking quality metrics across model versions. Parea supports experiment tracking with aggregate statistics, trace logging for end-to-end observability, and an LLM proxy gateway that enables unified access to multiple model providers with built-in caching and retries. Native SDKs for Python and TypeScript integrate with popular frameworks including OpenAI, Anthropic, LangChain, Instructor, DSPy, and LiteLLM. Parea is backed by Y Combinator (S23).
+Parea AI is an LLM evaluation, testing, and observability platform designed for AI engineering teams building production-ready LLM applications. The platform provides a REST API for managing prompt versions, running automated test suites, collecting human feedback, and tracking quality metrics across model versions. Parea supports experiment tracking with aggregate statistics, trace logging for end-to-end observability, and an LLM proxy gateway that enables unified access to multiple model providers with built-in caching and retries. Native SDKs for Python and TypeScript integrate with popular frameworks including OpenAI, Anthropic, LangChain, Instructor, DSPy, and LiteLLM, making it easy to instrument existing applications.
 
-- APIs.json: https://raw.githubusercontent.com/api-evangelist/parea/refs/heads/main/apis.yml
-- Naftiko: https://github.com/naftiko/fleet?utm_source=api-evangelist&utm_medium=readme&utm_campaign=parea-api-evangelist&utm_content=repo
+**Areas:** LLM · Evaluation · Observability · Testing · Prompt Management · AI Engineering · Machine Learning · Tracing · Experimentation · Human Feedback
 
-## Tags
+## Parea AI on APIs.io
 
-- LLM
-- Evaluation
-- Observability
-- Testing
-- Prompt Management
-- AI Engineering
-- Machine Learning
-- Tracing
-- Experimentation
-- Human Feedback
+Everything profiled for Parea AI is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/parea/](https://apis.io/providers/parea/)** — or go straight to one of the APIs or properties below.
 
-## APIs
+### APIs (1)
 
-| Name | Description | Docs |
-|------|-------------|------|
-| Parea REST API | REST API for trace logging, experiments, datasets, LLM proxy, and project management | [Documentation](https://docs.parea.ai) |
+- [Parea AI Parea API](https://apis.io/apis/parea/parea-parea-api/) — The Parea API from Parea AI — 19 operation(s) for parea.
 
-## Plans / Rate Limits / FinOps
+### Published properties
 
-| Resource | Location |
-|----------|----------|
-| Plans & Pricing | [plans/parea-plans-pricing.yml](plans/parea-plans-pricing.yml) |
-| Rate Limits | [rate-limits/parea-rate-limits.yml](rate-limits/parea-rate-limits.yml) |
-| FinOps | [finops/parea-finops.yml](finops/parea-finops.yml) |
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-**Plans summary:**
-- Free: $0/month — 2 members, 3,000 logs/month, 10 deployed prompts
-- Team: $150/month — 3 members, 100,000 logs/month
-- Enterprise: Custom pricing — unlimited members, custom log volumes, self-hosting
-- AI Consulting: Custom engagement pricing
+#### Agentic access (1)
 
-## Timestamps
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Created: 2026-06-13
-- Modified: 2026-06-13
+- [Parea Agentic Access](https://apis.io/agentic-access/parea/parea-agentic-access/)
 
-## Common
+#### JSON Schema (10)
 
-| Type | URL |
-|------|-----|
-| Website | https://www.parea.ai/ |
-| Documentation | https://docs.parea.ai |
-| GitHub Org | https://github.com/parea-ai |
-| LinkedIn | https://www.linkedin.com/company/parea-ai/ |
-| Blog | https://docs.parea.ai/blog/ |
-| Pricing | https://www.parea.ai/#pricing |
-| X (Twitter) | https://twitter.com/PareaAI |
+The data models the API reads and writes.
 
-## Maintainers
+- [AddColumnsSchema](https://apis.io/schemas/parea/AddColumnsSchema/)
+- [AddExperimentTraceLogsToAnnotationQueuesSchema](https://apis.io/schemas/parea/AddExperimentTraceLogsToAnnotationQueuesSchema/)
+- [AddTraceLogsToAnnotationQueuesSchema](https://apis.io/schemas/parea/AddTraceLogsToAnnotationQueuesSchema/)
+- [AnalyticsRequestSchema](https://apis.io/schemas/parea/AnalyticsRequestSchema/)
+- [AnnotationCriterionSchema](https://apis.io/schemas/parea/AnnotationCriterionSchema/)
+- [AnnotationQueueItemSchema](https://apis.io/schemas/parea/AnnotationQueueItemSchema/)
+- [AnnotationQueueSchema](https://apis.io/schemas/parea/AnnotationQueueSchema/)
+- [BootstrapEvalFullResultSchema](https://apis.io/schemas/parea/BootstrapEvalFullResultSchema/)
+- [TestCaseSchema](https://apis.io/schemas/parea/TestCaseSchema/)
+- [TraceLogSchema](https://apis.io/schemas/parea/TraceLogSchema/)
 
-| Name | Email |
-|------|-------|
-| Kin Lane | kin@apievangelist.com |
+#### JSON-LD (1)
+
+Linked-data contexts for the provider's vocabulary.
+
+- [Parea Context](https://apis.io/jsonld/parea/parea-context/)
+
+#### Vocabulary (1)
+
+The provider's domain terms, defined.
+
+- [Parea Vocabulary](https://apis.io/vocabularies/parea/parea-vocabulary/)
+
+#### Collections (1)
+
+Postman and Open Collection request collections.
+
+- [AI REST Parea API](https://apis.io/collections/parea/open-parea-parea-api/)
+
+#### Governance rules (1)
+
+Spectral rulesets for the provider's contracts.
+
+- [Parea AI — jsonschema rules](https://apis.io/rules/parea/parea-jsonschema-spectral-rules/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Parea Authentication](https://apis.io/security/parea/parea-authentication/)
+- [Parea Domain Security](https://apis.io/security/parea/parea-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Parea Scopes](https://apis.io/scopes/parea/parea-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Parea Plans Pricing](https://apis.io/plans/parea/parea-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Parea Rate Limits](https://apis.io/rate-limits/parea/parea-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Parea Finops](https://apis.io/finops/parea/parea-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.parea.ai/)
+- [Documentation](https://docs.parea.ai)
+- [Pricing](https://www.parea.ai/#pricing)
+- [Blog](https://docs.parea.ai/blog/)
+
+## API Evangelist rating
+
+**Kin Score 36.0** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 66.1 |
+| Contract quality | 51.6 |
+| Contract governance | 23.5 |
+| Operational transparency | 13.2 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 13.2 |
+
+**Agent readiness 23.7** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | verified |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 24.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/parea/](https://apis.io/providers/parea/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Parea AI: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/parea/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
